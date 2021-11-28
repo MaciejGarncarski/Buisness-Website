@@ -25,7 +25,6 @@ const H1 = styled.h1`
 
 const Description = styled.p`
   color: ${({ theme }) => theme.black};
-  padding: 0 8em;
   font-size: 2em;
   z-index: -1;
   display: -webkit-box;
@@ -33,6 +32,9 @@ const Description = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
+  @media screen and (min-width: 70em) {
+    padding: 0 8em;
+  }
 `;
 
 export { HeaderContainer, Description, H1 };

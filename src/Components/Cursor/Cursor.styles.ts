@@ -10,6 +10,7 @@ const PrimaryCursor = styled.div`
   z-index: 10;
   position: fixed;
   left: 0;
+  top: 0;
 `;
 
 const SecondaryCursor = styled.div`
@@ -22,6 +23,7 @@ const SecondaryCursor = styled.div`
   z-index: 10;
   position: fixed;
   left: 0;
+  top: 0;
 `;
 
 export { PrimaryCursor, SecondaryCursor };
