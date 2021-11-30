@@ -9,7 +9,7 @@ const HeaderContainer = styled.header`
   gap: 9.5em;
   position: relative;
   overflow-y: hidden;
-  scroll-padding-bottom: 1em;
+  scroll-padding-bottom: 4em;
 `;
 
 const H1 = styled.h1`
@@ -32,7 +32,7 @@ const Description = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  @media screen and (min-width: 70em) {
+  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     padding: 0 8em;
   }
 `;

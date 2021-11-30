@@ -11,7 +11,7 @@ const Header = function () {
   return (
     <HeaderContainer id="header">
       <H1 style={{ transform: `translate3d(0, ${multiplayer}px, 0)` }}>
-        Lorem ...
+        Business
       </H1>
       <Triangle multiplayer={multiplayer} />
       <Rectangle multiplayer={multiplayer} />

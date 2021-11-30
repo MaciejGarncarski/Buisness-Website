@@ -1,9 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import {
-  AiOutlineHome,
-  AiOutlineAccountBook,
-  AiOutlineAreaChart,
-} from "react-icons/ai";
+import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from "react-icons/ai";
+import { debounce } from "lodash";
 import { NavContainer, List, ListLink } from "./Nav.styles";
 import useScrollPosition from "../../hooks/useScrollPosition";
 
@@ -12,38 +9,51 @@ const Nav: React.FC = function () {
   const [navPosition, setNavPosition] = useState(0);
   const { offsetY } = useScrollPosition();
   const navRef = useRef<HTMLElement>(null);
-  useEffect(() => {
+
+  const handleResize = () => {
     if (navRef.current) {
       setNavPosition(navRef.current.offsetTop);
     }
+  };
+
+  useEffect(() => {
+    handleResize();
+
+    window.addEventListener("resize", debounce(handleResize, 1000), {
+      passive: true,
+    });
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   useEffect(() => {
     if (navPosition !== 0) {
-      if (offsetY >= navPosition - 10) {
+      if (offsetY >= navPosition - 50) {
         setIsSticked(true);
       } else {
         setIsSticked(false);
       }
     }
   }, [offsetY]);
+
   return (
     <NavContainer ref={navRef} isSticked={isSticked}>
       <List>
-        <ListLink>
-          <a href="#header">
+        <a href="#header">
+          <ListLink>
             <AiOutlineHome />
-          </a>
-        </ListLink>
-        <ListLink>
-          <a href="#header">
-            <AiOutlineAccountBook />
-          </a>
-        </ListLink>
-        <ListLink>
-          <a href="#test">
-            <AiOutlineAreaChart />
-          </a>
-        </ListLink>
+          </ListLink>
+        </a>
+        <a href="#about">
+          <ListLink>
+            <AiOutlineUser />
+          </ListLink>
+        </a>
+        <a href="#test">
+          <ListLink>
+            <AiOutlinePhone />
+          </ListLink>
+        </a>
       </List>
     </NavContainer>
   );

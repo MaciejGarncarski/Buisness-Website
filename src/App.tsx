@@ -1,12 +1,14 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import Tilt from "react-parallax-tilt";
+import Theme from "./Theme";
 import GlobalStyle from "./GlobalStyle";
+import useDeviceWidth from "./hooks/useDeviceWidth";
 import Nav from "./Components/Nav/Nav";
 import Cursor from "./Components/Cursor/Cursor";
 import Header from "./Components/Header/Header";
-import Theme from "./Theme";
-import useDeviceWidth from "./hooks/useDeviceWidth";
+import About from "./Components/About/About";
+
+type ThemeType = typeof Theme;
 
 const Placeholder = styled.div`
   height: 100vh;
@@ -14,17 +16,17 @@ const Placeholder = styled.div`
   padding-top: 7em;
 `;
 
-type ThemeType = typeof Theme;
-
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15em;
   > nav {
     color: ${({ theme }) => theme.color};
   }
 `;
+
 const App = function () {
   const { isSmallDevice } = useDeviceWidth();
   return (
@@ -34,7 +36,7 @@ const App = function () {
         <GlobalStyle />
         <Header />
         <Nav />
-        <Placeholder />
+        <About />
         <Placeholder id="test" />
       </MainContainer>
     </ThemeProvider>

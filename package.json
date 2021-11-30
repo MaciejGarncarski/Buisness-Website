@@ -16,11 +16,14 @@
     "lodash": "^4.17.21",
     "prettier": "^2.4.1",
     "react": "^17.0.0",
+    "react-animated-cursor": "^2.2.0",
     "react-dom": "^17.0.0",
     "react-icons": "^4.3.1",
     "react-parallax-tilt": "^1.5.78",
+    "react-responsive-carousel": "^3.2.22",
     "react-router-dom": "^6.0.2",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "swiper": "^7.3.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.34",

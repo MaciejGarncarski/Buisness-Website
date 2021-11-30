@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { debounce } from "lodash";
 
 const useDeviceWidth = () => {
   const [isSmallDevice, setIsSmallDevice] = useState(true);
   const checkDeviceWidth = () => {
-    if (window.innerWidth > 1300) {
+    if (window.innerWidth > 800) {
       setIsSmallDevice(false);
     } else {
       setIsSmallDevice(true);
     }
-    console.log(isSmallDevice);
   };
   useEffect(() => {
     checkDeviceWidth();

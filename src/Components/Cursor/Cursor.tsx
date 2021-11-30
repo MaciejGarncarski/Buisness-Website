@@ -19,14 +19,11 @@ const Cursor = function () {
     if (primaryCursor.current !== null && secondaryCursor.current !== null) {
       positionRef.current.mouseX = x - secondaryCursor.current.clientWidth / 2;
       positionRef.current.mouseY = y - secondaryCursor.current.clientHeight / 2;
-      primaryCursor.current.setAttribute(
-        "style",
-        `transform: translate3d(${
-          x - primaryCursor.current.clientWidth / 2
-        }px, ${y - primaryCursor.current.clientHeight / 2}px, 0)`
-      );
+      primaryCursor.current.style.transform = `translate3d(${
+        x - primaryCursor.current.clientWidth / 2
+      }px, ${y - primaryCursor.current.clientHeight / 2}px, 0)`;
     }
-  }, [x || y]);
+  }, [x, y]);
   useEffect(() => {
     const followMouse = () => {
       positionRef.current.key = requestAnimationFrame(followMouse);
@@ -42,8 +39,8 @@ const Cursor = function () {
         positionRef.current.destinationX = mouseX;
         positionRef.current.destinationY = mouseY;
       } else {
-        positionRef.current.distanceX = (mouseX - destinationX) * 0.1;
-        positionRef.current.distanceY = (mouseY - destinationY) * 0.1;
+        positionRef.current.distanceX = (mouseX - destinationX) * 0.085;
+        positionRef.current.distanceY = (mouseY - destinationY) * 0.085;
         if (
           Math.abs(positionRef.current.distanceX) +
             Math.abs(positionRef.current.distanceY) <
@@ -57,10 +54,7 @@ const Cursor = function () {
         }
       }
       if (secondaryCursor.current !== null) {
-        secondaryCursor.current.setAttribute(
-          "style",
-          `transform: translate3d(${destinationX}px, ${destinationY}px, 0)`
-        );
+        secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
       }
     };
     followMouse();

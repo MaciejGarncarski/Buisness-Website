@@ -8,7 +8,7 @@ export default function useMousePosition() {
       const { clientX, clientY } = event;
       setMousePosition({ x: clientX, y: clientY });
     };
-    document.addEventListener("mousemove", mouseMoveHandler, { passive: true });
+    document.addEventListener("mousemove", mouseMoveHandler);
 
     return () => {
       document.removeEventListener("mousemove", mouseMoveHandler);

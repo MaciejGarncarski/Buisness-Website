@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const NavContainer = styled.nav<{ isSticked: boolean }>`
+const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
   width: 100%;
   padding: 1.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2em;
-  background: #dcd6c0;
+  background: ${({ theme }) => theme.darkYellow};
   position: ${({ isSticked }) => (isSticked ? "fixed" : "absolute")};
   left: 0;
   ${({ isSticked }) =>
@@ -18,7 +19,7 @@ const NavContainer = styled.nav<{ isSticked: boolean }>`
       : `
     bottom: 0;
   `}
-  z-index: 1;
+  z-index: 3;
 `;
 
 const List = styled.ul`
@@ -28,17 +29,21 @@ const List = styled.ul`
 `;
 
 const ListLink = styled.li`
-  padding: 0.5em 1.6em;
   background: ${({ theme }) => theme.green};
+  border: 2px solid ${({ theme }) => theme.blue};
+  box-shadow: -0.25em 0.25em ${({ theme }) => theme.blue};
+  color: ${({ theme }) => theme.black};
+  padding: 0.5em 1.6em;
   display: flex;
   justify-content: center;
+
   & > a {
-    color: ${({ theme }) => theme.black};
     text-decoration: none;
-    & > svg {
-      width: 1.6em;
-      height: 100%;
-    }
+  }
+
+  & > svg {
+    width: 1.6em;
+    height: 100%;
   }
 `;
 
