@@ -11,13 +11,24 @@ import {
 import { Container } from "./About.styles";
 import Card from "../Card/Card";
 import CardTilt from "../CardTilt/CardTilt";
+import useReducedMotion from "../../hooks/useReducedMotion";
 
 SwiperCore.use([Navigation]);
 
 const About: React.FC = function () {
+  const usesReducedMotion = useReducedMotion();
+
+  let sliderSpeed = 0;
+  const checkSliderSpeed = () => {
+    if (!usesReducedMotion) {
+      sliderSpeed = 600;
+    }
+  };
+  checkSliderSpeed();
+
   return (
     <Container id="about">
-      <Swiper navigation speed={600} effect="flip" autoplay>
+      <Swiper navigation speed={sliderSpeed} effect="flip" autoplay>
         <SwiperSlide>
           <CardTilt bg="green" border="blue">
             <Card

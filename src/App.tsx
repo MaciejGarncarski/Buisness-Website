@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { isMobile } from "react-device-detect";
 import Theme from "./Theme";
@@ -8,14 +8,9 @@ import Cursor from "./Components/Cursor/Cursor";
 import Header from "./Components/Header/Header";
 import About from "./Components/About/About";
 import Footer from "./Components/Footer/Footer";
+import useReducedMotion from "./hooks/useReducedMotion";
 
 type ThemeType = typeof Theme;
-
-const Placeholder = styled.div`
-  height: 100vh;
-  width: 10em;
-  padding-top: 7em;
-`;
 
 const MainContainer = styled.div`
   display: flex;
@@ -23,6 +18,7 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 15em;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   > nav {
     color: ${({ theme }) => theme.color};
   }
@@ -37,7 +33,6 @@ const App = function () {
         <Header />
         <Nav />
         <About />
-        <Placeholder id="test" />
         <Footer />
       </MainContainer>
     </ThemeProvider>

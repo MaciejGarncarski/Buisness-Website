@@ -6,13 +6,13 @@ const HeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
   padding: 0 1em;
-  gap: 8em;
+  row-gap: 8em;
   position: relative;
   overflow-y: hidden;
-  scroll-padding-bottom: 4em;
-
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
-    gap: 4.5em;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5em;
   }
 `;
 
@@ -23,8 +23,11 @@ const H1 = styled.h1`
   z-index: 1;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 2.3em;
+  padding-top: 2.4em;
   text-align: center;
+  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+    padding-top: 0;
+  }
 `;
 
 const Description = styled.p`

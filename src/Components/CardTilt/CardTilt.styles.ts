@@ -10,20 +10,13 @@ const TiltContainer = styled(Tilt)<IProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 16em;
-  height: 25em;
-  transform: translateX(1.5em) translateZ(50px);
+  width: max(50vw, 16em);
+  height: max(27vw, 25em);
+  transform: translateZ(50px);
   background: ${({ bg, theme }) => theme[bg]};
   border: 4px solid ${({ theme }) => theme.black};
   box-shadow: -1em 1em ${({ border, theme }) => theme[border]};
   transform-style: preserve-3d;
-
-  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
-    transform: translateZ(50px);
-    width: 50vw;
-    height: 30em;
-    border: 4px solid ${({ theme }) => theme.black};
-  }
 `;
 
 export default TiltContainer;

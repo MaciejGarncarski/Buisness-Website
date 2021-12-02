@@ -9,7 +9,8 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
   align-items: center;
   gap: 2em;
   background: ${({ theme }) => theme.darkYellow};
-  border-bottom: 3px solid ${({ theme }) => theme.blue};
+  border-top: 2px solid ${({ theme }) => theme.blue};
+  border-bottom: 2px solid ${({ theme }) => theme.blue};
   position: ${({ isSticked }) => (isSticked ? "fixed" : "absolute")};
   left: 0;
   ${({ isSticked }) =>
@@ -21,24 +22,12 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
     bottom: 0;
   `}
   z-index: 3;
-  &::before {
-    content: "";
-    width: 100%;
-    height: 3px;
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    background: ${({ theme }) => theme.green};
-  }
 `;
 
 const List = styled.ul`
   list-style: none;
   display: flex;
-  gap: 2.8em;
-  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
-    gap: 6em;
-  }
+  gap: max(4.5vw, 3em);
 `;
 
 const ListLink = styled.li`

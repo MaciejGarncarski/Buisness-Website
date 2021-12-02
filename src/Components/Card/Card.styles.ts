@@ -16,6 +16,7 @@ const CardContainer = styled.article`
   align-items: center;
   flex-direction: column;
   transform: translateZ(90px) scale(0.8);
+  gap: 2em;
 `;
 
 const H3 = css`

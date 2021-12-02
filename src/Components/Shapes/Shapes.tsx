@@ -10,57 +10,37 @@ import circle from "../../Assets/Header/circle.svg";
 import rectangle from "../../Assets/Header/rectangle.svg";
 
 type ShapeProp = {
-  multiplayer: number;
+  multiply: number;
 };
 
-const Triangle = function ({ multiplayer }: ShapeProp) {
+const Triangle = function ({ multiply }: ShapeProp) {
   return (
     <TriangleContainer
       style={{
-        transform: `translate3d(0, ${multiplayer}px, 0)`,
+        transform: `translate3d(0, ${multiply}px, 0)`,
       }}
     >
-      <ImgScaled
-        src={triangle}
-        alt="Triangle"
-        initial={{ x: -150, y: 40 }}
-        animate={{ x: 0, y: 0 }}
-        transition={{ duration: 1, ease: "backInOut" }}
-      />
+      <ImgScaled src={triangle} alt="Triangle" />
     </TriangleContainer>
   );
 };
 
-const Rectangle = function ({ multiplayer }: ShapeProp) {
+const Rectangle = function ({ multiply }: ShapeProp) {
   return (
     <RectangleContainer
       style={{
-        transform: `translate3d(0, ${multiplayer}px, 0)`,
+        transform: `translate3d(0, ${multiply}px, 0)`,
       }}
     >
-      <ImgScaled
-        src={rectangle}
-        alt="Triangle"
-        initial={{ x: 150, y: 70 }}
-        animate={{ x: 0, y: 0 }}
-        transition={{ duration: 1, ease: "backInOut" }}
-      />
+      <ImgScaled src={rectangle} alt="Triangle" />
     </RectangleContainer>
   );
 };
 
-const Circle = function ({ multiplayer }: ShapeProp) {
+const Circle = function ({ multiply }: ShapeProp) {
   return (
-    <CircleContainer
-      style={{ transform: `translate3d(0, ${multiplayer}px, 0)` }}
-    >
-      <ImgScaled
-        src={circle}
-        alt="Triangle"
-        initial={{ x: 150, y: -40 }}
-        animate={{ x: 0, y: 0 }}
-        transition={{ duration: 1, ease: "backInOut" }}
-      />
+    <CircleContainer style={{ transform: `translate3d(0, ${multiply}px, 0)` }}>
+      <ImgScaled src={circle} alt="Triangle" />
     </CircleContainer>
   );
 };

@@ -1,9 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import useMousePosition from "../../hooks/useMousePosition";
 import { PrimaryCursor, SecondaryCursor } from "./Cursor.styles";
+import useReducedMotion from "../../hooks/useReducedMotion";
+
+// TODO: REFACTOR THIS SHIT :)
 
 const Cursor = function () {
   const [isActive, setIsActive] = useState(false);
+  const { usesReducedMotion } = useReducedMotion();
 
   useEffect(() => {
     const all = document.querySelectorAll("a");
@@ -18,6 +22,7 @@ const Cursor = function () {
       });
     };
   }, []);
+
   const { x, y } = useMousePosition();
   const primaryCursor = useRef<HTMLDivElement>(null);
   const secondaryCursor = useRef<HTMLDivElement>(null);
@@ -30,6 +35,7 @@ const Cursor = function () {
     distanceY: 0,
     key: -1,
   });
+
   useEffect(() => {
     if (primaryCursor.current !== null && secondaryCursor.current !== null) {
       positionRef.current.mouseX = x - secondaryCursor.current.clientWidth / 2;
@@ -39,6 +45,7 @@ const Cursor = function () {
       }px, ${y - primaryCursor.current.clientHeight / 2}px, 0)`;
     }
   }, [x, y]);
+
   useEffect(() => {
     const followMouse = () => {
       positionRef.current.key = requestAnimationFrame(followMouse);
@@ -51,6 +58,9 @@ const Cursor = function () {
         distanceY,
       } = positionRef.current;
       if (!destinationX || !destinationY) {
+        positionRef.current.destinationX = mouseX;
+        positionRef.current.destinationY = mouseY;
+      } else if (usesReducedMotion) {
         positionRef.current.destinationX = mouseX;
         positionRef.current.destinationY = mouseY;
       } else {
@@ -74,6 +84,7 @@ const Cursor = function () {
     };
     followMouse();
   }, []);
+
   return (
     <div>
       <PrimaryCursor ref={primaryCursor} className={isActive ? "active" : ""} />
