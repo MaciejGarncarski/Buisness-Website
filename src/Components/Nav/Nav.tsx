@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from "react-icons/ai";
 import { debounce } from "lodash";
-import { NavContainer, List, ListLink } from "./Nav.styles";
+import { NavContainer, List, ListLink, LinkAnchor } from "./Nav.styles";
 import useScrollPosition from "../../hooks/useScrollPosition";
 
 const Nav: React.FC = function () {
@@ -37,23 +37,29 @@ const Nav: React.FC = function () {
   }, [offsetY]);
 
   return (
-    <NavContainer ref={navRef} isSticked={isSticked}>
+    <NavContainer
+      ref={navRef}
+      isSticked={isSticked}
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <List>
-        <a href="#header">
-          <ListLink>
+        <ListLink>
+          <LinkAnchor href="#header">
             <AiOutlineHome />
-          </ListLink>
-        </a>
-        <a href="#about">
-          <ListLink>
+          </LinkAnchor>
+        </ListLink>
+        <ListLink>
+          <LinkAnchor href="#about">
             <AiOutlineUser />
-          </ListLink>
-        </a>
-        <a href="#test">
-          <ListLink>
+          </LinkAnchor>
+        </ListLink>
+        <ListLink>
+          <LinkAnchor href="#test">
             <AiOutlinePhone />
-          </ListLink>
-        </a>
+          </LinkAnchor>
+        </ListLink>
       </List>
     </NavContainer>
   );

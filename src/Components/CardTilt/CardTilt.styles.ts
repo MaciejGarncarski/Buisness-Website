@@ -7,17 +7,22 @@ interface IProps {
 }
 
 const TiltContainer = styled(Tilt)<IProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 16em;
   height: 25em;
-  transform: translateZ(50px);
+  transform: translateX(1.5em) translateZ(50px);
   background: ${({ bg, theme }) => theme[bg]};
-  border: 2px solid ${({ border, theme }) => theme[border]};
-  box-shadow: -0.75em 0.75em ${({ border, theme }) => theme[border]};
+  border: 4px solid ${({ theme }) => theme.black};
+  box-shadow: -1em 1em ${({ border, theme }) => theme[border]};
   transform-style: preserve-3d;
+
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+    transform: translateZ(50px);
     width: 50vw;
     height: 30em;
-    border: 5px solid ${({ border, theme }) => theme[border]};
+    border: 4px solid ${({ theme }) => theme.black};
   }
 `;
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const ImgScaled = styled.img`
+const ImgScaled = styled(motion.img)`
   width: 100%;
   height: 100%;
 `;

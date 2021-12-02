@@ -1,8 +1,23 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import useMousePosition from "../../hooks/useMousePosition";
 import { PrimaryCursor, SecondaryCursor } from "./Cursor.styles";
 
 const Cursor = function () {
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const all = document.querySelectorAll("a");
+    all.forEach((el) => {
+      el.addEventListener("mouseover", () => setIsActive(true));
+      el.addEventListener("mouseleave", () => setIsActive(false));
+    });
+    return () => {
+      all.forEach((el) => {
+        el.removeEventListener("mouseover", () => setIsActive(true));
+        el.removeEventListener("mouseleave", () => setIsActive(false));
+      });
+    };
+  }, []);
   const { x, y } = useMousePosition();
   const primaryCursor = useRef<HTMLDivElement>(null);
   const secondaryCursor = useRef<HTMLDivElement>(null);
@@ -61,8 +76,11 @@ const Cursor = function () {
   }, []);
   return (
     <div>
-      <PrimaryCursor ref={primaryCursor} />
-      <SecondaryCursor ref={secondaryCursor} />
+      <PrimaryCursor ref={primaryCursor} className={isActive ? "active" : ""} />
+      <SecondaryCursor
+        ref={secondaryCursor}
+        className={isActive ? "active" : ""}
+      />
     </div>
   );
 };

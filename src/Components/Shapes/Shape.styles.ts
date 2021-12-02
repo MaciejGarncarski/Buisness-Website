@@ -5,6 +5,9 @@ const Container = styled.div`
   height: clamp(7.8em, 20vw, 10em);
   position: absolute;
   will-change: transform;
+  -webkit-user-drag: none;
+  user-select: none;
+  overflow: hidden;
 `;
 
 const TriangleContainer = styled(Container)`

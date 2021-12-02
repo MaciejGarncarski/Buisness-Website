@@ -20,7 +20,13 @@ const Triangle = function ({ multiplayer }: ShapeProp) {
         transform: `translate3d(0, ${multiplayer}px, 0)`,
       }}
     >
-      <ImgScaled src={triangle} alt="Triangle" />
+      <ImgScaled
+        src={triangle}
+        alt="Triangle"
+        initial={{ x: -150, y: 40 }}
+        animate={{ x: 0, y: 0 }}
+        transition={{ duration: 1, ease: "backInOut" }}
+      />
     </TriangleContainer>
   );
 };
@@ -32,7 +38,13 @@ const Rectangle = function ({ multiplayer }: ShapeProp) {
         transform: `translate3d(0, ${multiplayer}px, 0)`,
       }}
     >
-      <ImgScaled src={rectangle} alt="Triangle" />
+      <ImgScaled
+        src={rectangle}
+        alt="Triangle"
+        initial={{ x: 150, y: 70 }}
+        animate={{ x: 0, y: 0 }}
+        transition={{ duration: 1, ease: "backInOut" }}
+      />
     </RectangleContainer>
   );
 };
@@ -42,7 +54,13 @@ const Circle = function ({ multiplayer }: ShapeProp) {
     <CircleContainer
       style={{ transform: `translate3d(0, ${multiplayer}px, 0)` }}
     >
-      <ImgScaled src={circle} alt="Triangle" />
+      <ImgScaled
+        src={circle}
+        alt="Triangle"
+        initial={{ x: 150, y: -40 }}
+        animate={{ x: 0, y: 0 }}
+        transition={{ duration: 1, ease: "backInOut" }}
+      />
     </CircleContainer>
   );
 };

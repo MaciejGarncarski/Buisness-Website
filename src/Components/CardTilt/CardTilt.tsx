@@ -11,16 +11,11 @@ const CardTilt = function ({ children, bg, border }: TCardTilt) {
   return (
     <TiltContainer
       perspective={500}
-      tiltMaxAngleY={6}
-      tiltMaxAngleX={6}
-      className="trackOnWindow"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      tiltMaxAngleY={3}
+      tiltMaxAngleX={5}
       bg={bg}
       border={border}
+      gyroscope
     >
       {children}
     </TiltContainer>

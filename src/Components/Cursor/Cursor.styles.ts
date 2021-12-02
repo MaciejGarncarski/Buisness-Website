@@ -11,6 +11,11 @@ const PrimaryCursor = styled.div`
   position: fixed;
   left: 0;
   top: 0;
+  transition: all 150ms ease-in-out;
+  transition-property: background-color;
+  &.active {
+    background-color: ${({ theme }) => theme.black};
+  }
 `;
 
 const SecondaryCursor = styled.div`
@@ -20,10 +25,15 @@ const SecondaryCursor = styled.div`
   border-radius: 50%;
   pointer-events: none;
   transform: translate3d(0, 0, 0);
-  z-index: 10;
+  z-index: 9;
   position: fixed;
   left: 0;
   top: 0;
+  transition: all 150ms ease-in-out;
+  transition-property: background-color;
+  &.active {
+    background-color: ${({ theme }) => theme.blue};
+  }
 `;
 
 export { PrimaryCursor, SecondaryCursor };

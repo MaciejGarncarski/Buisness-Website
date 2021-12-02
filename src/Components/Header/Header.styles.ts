@@ -6,10 +6,14 @@ const HeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
   padding: 0 1em;
-  gap: 9.5em;
+  gap: 8em;
   position: relative;
   overflow-y: hidden;
   scroll-padding-bottom: 4em;
+
+  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+    gap: 4.5em;
+  }
 `;
 
 const H1 = styled.h1`
@@ -28,12 +32,14 @@ const Description = styled.p`
   font-size: 2em;
   z-index: -1;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* number of lines to show */
+  -webkit-line-clamp: 4;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
+
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     padding: 0 8em;
+    text-align: center;
   }
 `;
 

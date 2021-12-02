@@ -1,5 +1,4 @@
 import React from "react";
-import Tilt from "react-parallax-tilt";
 import { HeaderContainer, H1, Description } from "./Header.styles";
 import { Triangle, Rectangle, Circle } from "../Shapes/Shapes";
 import useScrollPosition from "../../hooks/useScrollPosition";
@@ -17,9 +16,10 @@ const Header = function () {
       <Rectangle multiplayer={multiplayer} />
       <Circle multiplayer={multiplayer} />
       <Description style={{ transform: `translate3d(0, ${multiplayer}px, 0)` }}>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta rerum
-        quos nostrum asperiores exercitationem quo mollitia unde aut illo,
-        officia cum pariatur obcaecati qui saepe tempora ipsum eos dolorem at?
+        Armed and geared cause I just broke out the prison charged by the system
+        - for murdering the rhythm! Nightmares like Wes Craven people gunning,
+        my third eye seen it coming, before it happened. Small change, they
+        putting shame in the game.
       </Description>
       <ScrollMessage multiplayer={multiplayer} />
     </HeaderContainer>
