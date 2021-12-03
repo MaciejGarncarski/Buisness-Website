@@ -23,16 +23,18 @@ const MainContainer = styled.div`
   }
 `;
 
+const linkIDs = ["header", "about", "footer"];
+
 const App = function () {
   return (
     <ThemeProvider theme={Theme}>
       {!isMobile && <Cursor />}
       <MainContainer>
         <GlobalStyle />
-        <Header />
-        <Nav />
-        <About />
-        <Footer />
+        <Header id={linkIDs[0]} />
+        <Nav ids={linkIDs} />
+        <About id={linkIDs[1]} />
+        <Footer id={linkIDs[2]} />
       </MainContainer>
     </ThemeProvider>
   );

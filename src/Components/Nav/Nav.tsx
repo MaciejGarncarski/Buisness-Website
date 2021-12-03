@@ -4,7 +4,7 @@ import { debounce } from "lodash";
 import { NavContainer, List, ListLink, LinkAnchor } from "./Nav.styles";
 import useScrollPosition from "../../hooks/useScrollPosition";
 
-const Nav: React.FC = function () {
+const Nav: React.FC<{ ids: string[] }> = function ({ ids }) {
   const [isSticked, setIsSticked] = useState(false);
   const [navPosition, setNavPosition] = useState(0);
   const { offsetY } = useScrollPosition();
@@ -46,17 +46,17 @@ const Nav: React.FC = function () {
     >
       <List>
         <ListLink>
-          <LinkAnchor href="#" title="home page">
+          <LinkAnchor href={`#${ids[0]}`} title="home page">
             <AiOutlineHome />
           </LinkAnchor>
         </ListLink>
         <ListLink>
-          <LinkAnchor href="#about" title="about our firma">
+          <LinkAnchor href={`#${ids[1]}`} title="about our firma">
             <AiOutlineUser />
           </LinkAnchor>
         </ListLink>
         <ListLink>
-          <LinkAnchor href="#test" title="test">
+          <LinkAnchor href={`#${ids[2]}`} title="test">
             <AiOutlinePhone />
           </LinkAnchor>
         </ListLink>

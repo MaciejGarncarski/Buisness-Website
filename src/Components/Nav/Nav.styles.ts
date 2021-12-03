@@ -9,8 +9,8 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
   align-items: center;
   gap: 2em;
   background: ${({ theme }) => theme.darkYellow};
-  border-top: 2px solid ${({ theme }) => theme.blue};
-  border-bottom: 2px solid ${({ theme }) => theme.blue};
+  border-top: 1.5px solid ${({ theme }) => theme.green};
+  border-bottom: 1.5px solid ${({ theme }) => theme.green};
   position: ${({ isSticked }) => (isSticked ? "fixed" : "absolute")};
   left: 0;
   ${({ isSticked }) =>

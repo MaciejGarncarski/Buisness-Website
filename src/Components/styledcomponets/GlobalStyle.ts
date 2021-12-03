@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     html{
         scroll-behavior: smooth;
+        scroll-padding: 5em;
     }
     *, *::before, *::after{
         padding: 0;
@@ -23,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     .swiper {
         width: 100%;
         height: 100%;
+        padding: 5em;
     }
 
     .swiper-slide {

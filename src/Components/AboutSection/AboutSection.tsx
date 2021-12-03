@@ -15,7 +15,11 @@ import useReducedMotion from "../../hooks/useReducedMotion";
 
 SwiperCore.use([Navigation]);
 
-const About: React.FC = function () {
+type TAbout = {
+  id: string;
+};
+
+const About: React.FC<TAbout> = function ({ id }) {
   const usesReducedMotion = useReducedMotion();
 
   let sliderSpeed = 0;
@@ -27,7 +31,7 @@ const About: React.FC = function () {
   checkSliderSpeed();
 
   return (
-    <Container id="about">
+    <Container id={id}>
       <Swiper navigation speed={sliderSpeed} effect="flip" autoplay>
         <SwiperSlide>
           <CardTilt bg="green" border="blue">

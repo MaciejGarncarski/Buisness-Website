@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { FooterContainer, Para } from "./Footer.styles";
 import Link from "../Link/Link";
 
-const Footer = function () {
+const Footer: React.FC<{ id: string }> = function ({ id }) {
   const [year, setYear] = useState(2021);
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
   return (
-    <FooterContainer>
+    <FooterContainer id={id}>
       <Para>
         &copy;{" "}
         <Link

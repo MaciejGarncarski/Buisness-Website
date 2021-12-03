@@ -6,7 +6,7 @@ import ScrollMessage from "../ScrollMessage/ScrollMessage";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import useReducedMotion from "../../hooks/useReducedMotion";
 
-const Header = function () {
+const Header: React.FC<{ id: string }> = function ({ id }) {
   const { offsetY } = useScrollPosition();
   const usesReducedMotion = useReducedMotion();
 
@@ -20,7 +20,7 @@ const Header = function () {
   }
 
   return (
-    <HeaderContainer id="header">
+    <HeaderContainer id={id}>
       <H1 style={{ transform: `translate3d(0, ${multiply}px, 0)` }}>
         Business
       </H1>

@@ -1,4 +1,5 @@
 import React from "react";
+import { isMobile } from "react-device-detect";
 import TiltContainer from "./CardContainer.styles";
 import useReducedMotion from "../../hooks/useReducedMotion";
 
@@ -15,6 +16,9 @@ const CardTilt = function ({ children, bg, border }: TCardTilt) {
   if (!usesReducedMotion) {
     tiltY = 3;
     tiltX = 5;
+  } else if (isMobile) {
+    tiltY = 20;
+    tiltX = 20;
   }
   return (
     <TiltContainer
