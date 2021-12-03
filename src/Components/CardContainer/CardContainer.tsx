@@ -1,5 +1,5 @@
 import React from "react";
-import TiltContainer from "./CardTilt.styles";
+import TiltContainer from "./CardContainer.styles";
 import useReducedMotion from "../../hooks/useReducedMotion";
 
 interface TCardTilt {

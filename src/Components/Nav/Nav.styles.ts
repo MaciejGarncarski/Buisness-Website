@@ -42,7 +42,7 @@ const LinkAnchor = styled.a`
   color: ${({ theme }) => theme.black};
   text-decoration: none;
   display: block;
-  padding: 0.4em 1.6em;
+  padding: 0.4em 1.65em;
   width: 100%;
   height: 100%;
   & > svg {

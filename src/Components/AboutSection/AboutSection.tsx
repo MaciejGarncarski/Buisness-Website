@@ -8,9 +8,9 @@ import {
   AiOutlineExperiment,
   AiOutlineCalendar,
 } from "react-icons/ai";
-import { Container } from "./About.styles";
+import { Container } from "./AboutSection.styles";
 import Card from "../Card/Card";
-import CardTilt from "../CardTilt/CardTilt";
+import CardTilt from "../CardContainer/CardContainer";
 import useReducedMotion from "../../hooks/useReducedMotion";
 
 SwiperCore.use([Navigation]);

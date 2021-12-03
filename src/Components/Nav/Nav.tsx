@@ -46,17 +46,17 @@ const Nav: React.FC = function () {
     >
       <List>
         <ListLink>
-          <LinkAnchor href="#">
+          <LinkAnchor href="#" title="home page">
             <AiOutlineHome />
           </LinkAnchor>
         </ListLink>
         <ListLink>
-          <LinkAnchor href="#about">
+          <LinkAnchor href="#about" title="about our firma">
             <AiOutlineUser />
           </LinkAnchor>
         </ListLink>
         <ListLink>
-          <LinkAnchor href="#test">
+          <LinkAnchor href="#test" title="test">
             <AiOutlinePhone />
           </LinkAnchor>
         </ListLink>
