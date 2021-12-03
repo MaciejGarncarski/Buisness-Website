@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useScrollPosition = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -8,15 +8,15 @@ const useScrollPosition = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, {
+    window.addEventListener('scroll', handleScroll, {
       passive: true,
     });
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  return { offsetY };
+  return offsetY;
 };
 
 export default useScrollPosition;

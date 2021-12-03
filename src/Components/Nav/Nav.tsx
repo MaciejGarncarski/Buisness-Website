@@ -1,13 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
-import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from "react-icons/ai";
-import { debounce } from "lodash";
-import { NavContainer, List, ListLink, LinkAnchor } from "./Nav.styles";
-import useScrollPosition from "../../hooks/useScrollPosition";
+import React, { useEffect, useState, useRef } from 'react';
+import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
+import { debounce } from 'lodash';
+import { NavContainer, List, ListLink, LinkAnchor } from './Nav.styles';
+import useScrollPosition from '../../hooks/useScrollPosition';
+import 'leaflet/dist/leaflet.css';
 
 const Nav: React.FC<{ ids: string[] }> = function ({ ids }) {
   const [isSticked, setIsSticked] = useState(false);
   const [navPosition, setNavPosition] = useState(0);
-  const { offsetY } = useScrollPosition();
+  const offsetY = useScrollPosition();
   const navRef = useRef<HTMLElement>(null);
 
   const handleResize = () => {
@@ -19,11 +20,11 @@ const Nav: React.FC<{ ids: string[] }> = function ({ ids }) {
   useEffect(() => {
     handleResize();
 
-    window.addEventListener("resize", debounce(handleResize, 1000), {
+    window.addEventListener('resize', debounce(handleResize, 1000), {
       passive: true,
     });
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ const Nav: React.FC<{ ids: string[] }> = function ({ ids }) {
       isSticked={isSticked}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <List>
         <ListLink>

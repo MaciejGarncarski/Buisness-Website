@@ -1,7 +1,7 @@
-import React from "react";
-import { isMobile } from "react-device-detect";
-import TiltContainer from "./CardContainer.styles";
-import useReducedMotion from "../../hooks/useReducedMotion";
+import React from 'react';
+import { isMobile } from 'react-device-detect';
+import TiltContainer from './CardContainer.styles';
+import useReducedMotion from '../../hooks/useReducedMotion';
 
 interface TCardTilt {
   children: React.ReactNode;

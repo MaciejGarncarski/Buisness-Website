@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
   width: 100%;
@@ -11,7 +11,7 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
   background: ${({ theme }) => theme.darkYellow};
   border-top: 1.5px solid ${({ theme }) => theme.green};
   border-bottom: 1.5px solid ${({ theme }) => theme.green};
-  position: ${({ isSticked }) => (isSticked ? "fixed" : "absolute")};
+  position: ${({ isSticked }) => (isSticked ? 'fixed' : 'absolute')};
   left: 0;
   ${({ isSticked }) =>
     isSticked
@@ -21,7 +21,7 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
       : `
     bottom: 0;
   `}
-  z-index: 3;
+  z-index: 9999;
 `;
 
 const List = styled.ul`

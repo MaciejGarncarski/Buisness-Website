@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  CardContainer,
-  Label,
-  Heading,
-  IconContainer,
-  CardDescription,
-} from "./Card.styles";
+import React from 'react';
+import { CardContainer, Label, Heading, IconContainer, CardDescription } from './Card.styles';
 
 interface TCard {
   label: string;

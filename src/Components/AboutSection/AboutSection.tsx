@@ -1,17 +1,13 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import SwiperCore, { Navigation } from "swiper";
-import {
-  AiOutlineBarChart,
-  AiOutlineExperiment,
-  AiOutlineCalendar,
-} from "react-icons/ai";
-import { Container } from "./AboutSection.styles";
-import Card from "../Card/Card";
-import CardTilt from "../CardContainer/CardContainer";
-import useReducedMotion from "../../hooks/useReducedMotion";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import SwiperCore, { Navigation } from 'swiper';
+import { AiOutlineBarChart, AiOutlineExperiment, AiOutlineCalendar } from 'react-icons/ai';
+import Container from './AboutSection.styles';
+import Card from '../Card/Card';
+import CardTilt from '../CardContainer/CardContainer';
+import useReducedMotion from '../../hooks/useReducedMotion';
 
 SwiperCore.use([Navigation]);
 

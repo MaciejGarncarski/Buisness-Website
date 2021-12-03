@@ -1,5 +1,5 @@
-import Tilt from "react-parallax-tilt";
-import styled from "styled-components";
+import Tilt from 'react-parallax-tilt';
+import styled from 'styled-components';
 
 interface IProps {
   bg: string;

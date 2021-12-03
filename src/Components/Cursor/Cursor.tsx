@@ -1,24 +1,23 @@
-import React, { useRef, useEffect, useState } from "react";
-import useMousePosition from "../../hooks/useMousePosition";
-import { PrimaryCursor, SecondaryCursor } from "./Cursor.styles";
-import useReducedMotion from "../../hooks/useReducedMotion";
+import React, { useRef, useEffect, useState } from 'react';
+import useMousePosition from '../../hooks/useMousePosition';
+import { PrimaryCursor, SecondaryCursor } from './Cursor.styles';
+import useReducedMotion from '../../hooks/useReducedMotion';
 
 // TODO: REFACTOR THIS SHIT :)
 
 const Cursor = function () {
   const [isActive, setIsActive] = useState(false);
-  const { usesReducedMotion } = useReducedMotion();
 
   useEffect(() => {
-    const all = document.querySelectorAll("a");
+    const all = document.querySelectorAll('a');
     all.forEach((el) => {
-      el.addEventListener("mouseover", () => setIsActive(true));
-      el.addEventListener("mouseleave", () => setIsActive(false));
+      el.addEventListener('mouseover', () => setIsActive(true));
+      el.addEventListener('mouseleave', () => setIsActive(false));
     });
     return () => {
       all.forEach((el) => {
-        el.removeEventListener("mouseover", () => setIsActive(true));
-        el.removeEventListener("mouseleave", () => setIsActive(false));
+        el.removeEventListener('mouseover', () => setIsActive(true));
+        el.removeEventListener('mouseleave', () => setIsActive(false));
       });
     };
   }, []);
@@ -49,26 +48,16 @@ const Cursor = function () {
   useEffect(() => {
     const followMouse = () => {
       positionRef.current.key = requestAnimationFrame(followMouse);
-      const {
-        mouseX,
-        mouseY,
-        destinationX,
-        destinationY,
-        distanceX,
-        distanceY,
-      } = positionRef.current;
+      const { mouseX, mouseY, destinationX, destinationY, distanceX, distanceY } =
+        positionRef.current;
       if (!destinationX || !destinationY) {
-        positionRef.current.destinationX = mouseX;
-        positionRef.current.destinationY = mouseY;
-      } else if (usesReducedMotion) {
         positionRef.current.destinationX = mouseX;
         positionRef.current.destinationY = mouseY;
       } else {
         positionRef.current.distanceX = (mouseX - destinationX) * 0.085;
         positionRef.current.distanceY = (mouseY - destinationY) * 0.085;
         if (
-          Math.abs(positionRef.current.distanceX) +
-            Math.abs(positionRef.current.distanceY) <
+          Math.abs(positionRef.current.distanceX) + Math.abs(positionRef.current.distanceY) <
           0.1
         ) {
           positionRef.current.destinationX = mouseX;
@@ -87,11 +76,8 @@ const Cursor = function () {
 
   return (
     <div>
-      <PrimaryCursor ref={primaryCursor} className={isActive ? "active" : ""} />
-      <SecondaryCursor
-        ref={secondaryCursor}
-        className={isActive ? "active" : ""}
-      />
+      <PrimaryCursor ref={primaryCursor} className={isActive ? 'active' : ''} />
+      <SecondaryCursor ref={secondaryCursor} className={isActive ? 'active' : ''} />
     </div>
   );
 };

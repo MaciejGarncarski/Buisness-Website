@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const PrimaryCursor = styled.div`
   width: 2em;
@@ -7,7 +7,7 @@ const PrimaryCursor = styled.div`
   border-radius: 50%;
   pointer-events: none;
   transform: translate3d(0, 0, 0);
-  z-index: 10;
+  z-index: 10001;
   position: fixed;
   left: 0;
   top: 0;
@@ -25,7 +25,7 @@ const SecondaryCursor = styled.div`
   border-radius: 50%;
   pointer-events: none;
   transform: translate3d(0, 0, 0);
-  z-index: 9;
+  z-index: 10000;
   position: fixed;
   left: 0;
   top: 0;

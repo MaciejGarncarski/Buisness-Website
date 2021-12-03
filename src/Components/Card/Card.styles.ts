@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const Container = styled.section`
   width: 100%;
@@ -55,11 +55,4 @@ const CardDescription = styled.p`
   padding: 0 0.75em;
 `;
 
-export {
-  Container,
-  CardContainer,
-  Heading,
-  Label,
-  IconContainer,
-  CardDescription,
-};
+export { Container, CardContainer, Heading, Label, IconContainer, CardDescription };

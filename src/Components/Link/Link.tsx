@@ -1,5 +1,5 @@
-import React from "react";
-import Anchor from "./Link.styles";
+import React from 'react';
+import Anchor from './Link.styles';
 
 type PLink = {
   children: React.ReactNode;

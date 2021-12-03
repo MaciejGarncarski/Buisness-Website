@@ -1,13 +1,9 @@
-import React from "react";
-import {
-  TriangleContainer,
-  RectangleContainer,
-  CircleContainer,
-} from "./Shape.styles";
-import ImgScaled from "../ImgScaled/ImgScaled";
-import triangle from "../../Assets/Header/triangle.svg";
-import circle from "../../Assets/Header/circle.svg";
-import rectangle from "../../Assets/Header/rectangle.svg";
+import React from 'react';
+import { TriangleContainer, RectangleContainer, CircleContainer } from './Shape.styles';
+import ImgScaled from '../ImgScaled/ImgScaled';
+import triangle from '../../Assets/Header/triangle.svg';
+import circle from '../../Assets/Header/circle.svg';
+import rectangle from '../../Assets/Header/rectangle.svg';
 
 type ShapeProp = {
   multiply: number;

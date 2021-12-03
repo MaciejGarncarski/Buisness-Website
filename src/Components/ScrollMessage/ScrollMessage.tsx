@@ -1,5 +1,5 @@
-import React from "react";
-import Message from "./ScrollMessage.styles";
+import React from 'react';
+import Message from './ScrollMessage.styles';
 
 type TMultiplayer = {
   multiply: number;

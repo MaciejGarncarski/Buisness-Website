@@ -1,15 +1,18 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     html{
         scroll-behavior: smooth;
-        scroll-padding: 5em;
+        scroll-padding: 10em;
     }
     *, *::before, *::after{
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        /* cursor: none; */
+        cursor: none;
+        @media (prefers-reduced-motion) {
+            cursor: auto;
+        }
     }
     body{
         background-color: ${({ theme }) => theme.yellow};
@@ -24,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     .swiper {
         width: 100%;
         height: 100%;
-        padding: 5em;
+        padding: 3em 0;
     }
 
     .swiper-slide {
