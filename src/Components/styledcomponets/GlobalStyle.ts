@@ -1,9 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-
+import SwiperStyles from './Swpier.styles';
+import LeafletStyles from './Leaflet.styles';
 const GlobalStyle = createGlobalStyle`
     html{
         scroll-behavior: smooth;
-        scroll-padding: 10em;
+        scroll-padding-top: 8em;
     }
     *, *::before, *::after{
         padding: 0;
@@ -19,34 +20,19 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         font-family: 'Merriweather', serif;
     }
-    :root{
-        --swiper-theme-color: ${({ theme }) => theme.black};
-        --swiper-navigation-size: 3em;
-
-    }
-    .swiper {
-        width: 100%;
-        height: 100%;
-        padding: 3em 0;
-    }
-
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     ::-webkit-scrollbar{
         background: ${({ theme }) => theme.darkYellow};
     }
     ::-webkit-scrollbar-thumb{
         background-color: ${({ theme }) => theme.green};
-        border: 2.5px solid ${({ theme }) => theme.black};
+        border: 4px solid ${({ theme }) => theme.black};
         transition: background-color 2s ease-in-out;
         &:hover{
             background-color: ${({ theme }) => theme.blue};
         }
     }
+    ${SwiperStyles};
+    ${LeafletStyles};
 `;
 
 export default GlobalStyle;

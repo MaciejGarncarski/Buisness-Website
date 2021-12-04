@@ -9,8 +9,8 @@ import Header from './Header/Header';
 import About from './AboutSection/AboutSection';
 import Footer from './Footer/Footer';
 import ContactSection from './ContactSection/ContactSection';
+import Separator from '../Components/Separator/Separator';
 import useReducedMotion from '../hooks/useReducedMotion';
-
 type ThemeType = typeof Theme;
 
 const MainContainer = styled.div`
@@ -18,7 +18,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 13em;
+  row-gap: max(10vh, 9em);
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   > nav {
     color: ${({ theme }) => theme.color};
@@ -33,10 +33,11 @@ const App = function () {
     <ThemeProvider theme={Theme}>
       {!isMobile && !usesReducedMotion && <Cursor />}
       <MainContainer>
+        <Nav ids={linkIDs} />
         <GlobalStyle />
         <Header id={linkIDs[0]} />
-        <Nav ids={linkIDs} />
         <About id={linkIDs[1]} />
+        <Separator />
         <ContactSection id={linkIDs[2]} />
         <Footer />
       </MainContainer>

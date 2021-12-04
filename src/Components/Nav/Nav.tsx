@@ -3,7 +3,6 @@ import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
 import { debounce } from 'lodash';
 import { NavContainer, List, ListLink, LinkAnchor } from './Nav.styles';
 import useScrollPosition from '../../hooks/useScrollPosition';
-import 'leaflet/dist/leaflet.css';
 
 const Nav: React.FC<{ ids: string[] }> = function ({ ids }) {
   const [isSticked, setIsSticked] = useState(false);
@@ -35,7 +34,7 @@ const Nav: React.FC<{ ids: string[] }> = function ({ ids }) {
         setIsSticked(false);
       }
     }
-  }, [offsetY]);
+  }, [navPosition, offsetY]);
 
   return (
     <NavContainer

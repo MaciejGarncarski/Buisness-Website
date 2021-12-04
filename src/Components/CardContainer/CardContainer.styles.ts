@@ -10,8 +10,8 @@ const TiltContainer = styled(Tilt)<IProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: max(50vw, 16em);
-  height: max(27vw, 25em);
+  width: max(60vw, 18em);
+  height: max(30vw, 25em);
   transform: translateZ(50px);
   background: ${({ bg, theme }) => theme[bg]};
   border: 4px solid ${({ theme }) => theme.black};

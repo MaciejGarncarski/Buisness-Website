@@ -7,7 +7,7 @@ import useScrollPosition from '../../hooks/useScrollPosition';
 import useReducedMotion from '../../hooks/useReducedMotion';
 
 const Header: React.FC<{ id: string }> = function ({ id }) {
-  const { offsetY } = useScrollPosition();
+  const offsetY = useScrollPosition();
   const usesReducedMotion = useReducedMotion();
 
   let multiply = 0;

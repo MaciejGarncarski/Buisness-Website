@@ -7,7 +7,6 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2em;
   background: ${({ theme }) => theme.darkYellow};
   border-top: 1.5px solid ${({ theme }) => theme.green};
   border-bottom: 1.5px solid ${({ theme }) => theme.green};
@@ -27,7 +26,9 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
 const List = styled.ul`
   list-style: none;
   display: flex;
-  gap: max(4.5vw, 3em);
+  @supports (gap: 10px) {
+    gap: max(4.5vw, 3em);
+  }
 `;
 
 const ListLink = styled.li`
@@ -36,6 +37,9 @@ const ListLink = styled.li`
   box-shadow: -0.25em 0.25em ${({ theme }) => theme.blue};
   display: flex;
   justify-content: center;
+  @supports (not (gap: 10px)) {
+    margin: 0 max(4.5vw, 3em);
+  }
 `;
 
 const LinkAnchor = styled.a`

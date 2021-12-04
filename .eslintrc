@@ -26,6 +26,10 @@
     "prettier"
   ],
   "rules": {
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }],
     "key-spacing": ["error", {"mode": "strict"}],
     "@typescript-eslint/indent": [ "error", 2 ],
     "no-console": 1,

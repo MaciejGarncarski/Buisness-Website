@@ -16,9 +16,6 @@ const CardTilt = function ({ children, bg, border }: TCardTilt) {
   if (!usesReducedMotion) {
     tiltY = 3;
     tiltX = 5;
-  } else if (isMobile) {
-    tiltY = 20;
-    tiltX = 20;
   }
   return (
     <TiltContainer
@@ -27,7 +24,6 @@ const CardTilt = function ({ children, bg, border }: TCardTilt) {
       tiltMaxAngleX={tiltX}
       bg={bg}
       border={border}
-      gyroscope
     >
       {children}
     </TiltContainer>

@@ -1,13 +1,5 @@
 import styled, { css } from 'styled-components';
 
-const Container = styled.section`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const CardContainer = styled.article`
   width: 100%;
   height: 100%;
@@ -55,4 +47,4 @@ const CardDescription = styled.p`
   padding: 0 0.75em;
 `;
 
-export { Container, CardContainer, Heading, Label, IconContainer, CardDescription };
+export { CardContainer, Heading, Label, IconContainer, CardDescription };
