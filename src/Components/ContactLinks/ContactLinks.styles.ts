@@ -66,7 +66,7 @@ const ContactLink = styled.a`
   transition: background-color 200ms ease;
   padding: 1.5em 0;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.3em;
   & > svg {
     font-size: 1.5em;
   }
