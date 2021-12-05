@@ -13,13 +13,19 @@ const bgSizeRepeat = css`
   background-repeat: no-repeat;
 `;
 
-const Container = styled.article`
+const Container = styled.ul`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+  list-style: none;
+  & > li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
   &::before {
     ${pseudoElement};
     left: 2em;
@@ -57,21 +63,24 @@ const Container = styled.article`
 `;
 
 const ContactLink = styled.a`
+  color: ${({ theme }) => theme.black};
   display: flex;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
-  color: ${({ theme }) => theme.black};
   text-decoration: none;
-  transition: background-color 200ms ease;
   padding: 1.5em 0;
   font-weight: 700;
   font-size: 1.3em;
+  border: 4px solid transparent;
+  transition: all ease-in-out 400ms;
+  transition-property: background-color, border-color;
   & > svg {
     font-size: 1.5em;
   }
-  &:hover {
+  &:hover,
+  :focus {
     background-color: ${({ theme }) => theme.darkYellow};
+    border-color: ${({ theme }) => theme.black};
   }
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     gap: 0.3em;

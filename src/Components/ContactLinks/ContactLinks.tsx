@@ -5,18 +5,24 @@ import { Container, ContactLink } from './ContactLinks.styles';
 const ContactLinks = () => {
   return (
     <Container>
-      <ContactLink href="tel:1234">
-        <AiOutlinePhone />
-        <p>TROLOLOLOLO</p>
-      </ContactLink>
-      <ContactLink href="mailto:maciejg0220@gmail.com">
-        <AiOutlineMail />
-        <p>maciejg0220@gmail.com</p>
-      </ContactLink>
-      <ContactLink href="#">
-        <AiOutlineClockCircle />
-        <p>Pn-Pt: 8:00-16:00</p>
-      </ContactLink>
+      <li>
+        <ContactLink href="tel:+48000000000">
+          <AiOutlinePhone />
+          <p>+48-000-000-000</p>
+        </ContactLink>
+      </li>
+      <li>
+        <ContactLink href="mailto:maciejg0220@gmail.com">
+          <AiOutlineMail />
+          <p>maciejg0220@gmail.com</p>
+        </ContactLink>
+      </li>
+      <li>
+        <ContactLink href="#">
+          <AiOutlineClockCircle />
+          <p>Pn-Pt: 8:00-16:00</p>
+        </ContactLink>
+      </li>
     </Container>
   );
 };

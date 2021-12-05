@@ -41,7 +41,7 @@ const Description = styled.p`
   -webkit-box-orient: vertical;
 
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
-    padding: 0 8em;
+    padding: 0 12em;
     text-align: center;
   }
 `;

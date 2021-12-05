@@ -44,9 +44,9 @@ const About = function ({ id }: TypeId) {
           <CardTilt bg="darkYellow" border="green">
             <Card
               label="2"
-              heading="Products"
+              heading="Services"
               icon={<AiOutlineExperiment />}
-              description="Products from our company are tested by multiple quality testers."
+              description="Courses from our company are tested by multiple quality testers and have got"
             />
           </CardTilt>
         </SwiperSlide>
