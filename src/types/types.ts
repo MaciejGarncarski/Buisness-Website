@@ -1,5 +1,6 @@
 export type TypeId = {
   id: string;
+  offsetY?: number;
 };
 
 export type TIdArray = {

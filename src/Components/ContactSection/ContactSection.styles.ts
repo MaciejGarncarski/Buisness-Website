@@ -13,6 +13,7 @@ const Container = styled.section`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3em;
+    height: 30em;
   }
   & > div:last-child {
     width: 100%;

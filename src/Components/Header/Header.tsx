@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
 import { HeaderContainer, H1, Description } from './Header.styles';
 import { Triangle, Rectangle, Circle } from '../Shapes/Shapes';
-import ScrollMessage from '../ScrollMessage/ScrollMessage';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import useReducedMotion from '../../hooks/useReducedMotion';
 
 import { TypeId } from '../../types/types';
 
-const Header = ({ id }: TypeId) => {
-  const offsetY = useScrollPosition();
+type THeader = {
+  id: string;
+  offsetY: number;
+};
+
+const Header = ({ id, offsetY }: THeader) => {
   const usesReducedMotion = useReducedMotion();
 
   let multiply = 0;
@@ -32,7 +35,6 @@ const Header = ({ id }: TypeId) => {
         rhythm! Nightmares like Wes Craven people gunning, my third eye seen it coming, before it
         happened. Small change, they putting shame in the game.
       </Description>
-      <ScrollMessage multiply={multiply} />
     </HeaderContainer>
   );
 };

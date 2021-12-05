@@ -15,6 +15,7 @@ const SwiperStyles = css`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 3em 0;
   }
 `;
 

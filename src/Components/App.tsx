@@ -1,18 +1,21 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { isMobile } from 'react-device-detect';
+import loadable from '@loadable/component';
 import Theme from './styledcomponets/Theme';
 import GlobalStyle from './styledcomponets/GlobalStyle';
-import Cursor from './Cursor/Cursor';
-import Header from './Header/Header';
-import About from './AboutSection/AboutSection';
-import Footer from './Footer/Footer';
 import ContactSection from './ContactSection/ContactSection';
 import Separator from '../Components/Separator/Separator';
 import useReducedMotion from '../hooks/useReducedMotion';
-type ThemeType = typeof Theme;
-import loadable from '@loadable/component';
+import About from './AboutSection/AboutSection';
+import useScrollPosition from '../hooks/useScrollPosition';
+
 const Nav = loadable(() => import('./Nav/Nav'));
+const Header = loadable(() => import('./Header/Header'));
+const Cursor = loadable(() => import('./Cursor/Cursor'));
+const Footer = loadable(() => import('./Footer/Footer'));
+
+type ThemeType = typeof Theme;
 
 const MainContainer = styled.div`
   display: flex;
@@ -29,14 +32,15 @@ const MainContainer = styled.div`
 const linkIDs = ['header', 'about', 'contact'];
 
 const App = function () {
+  const offsetY = useScrollPosition();
   const usesReducedMotion = useReducedMotion();
   return (
     <ThemeProvider theme={Theme}>
       {!isMobile && !usesReducedMotion && <Cursor />}
       <MainContainer>
-        <Nav ids={linkIDs} />
+        <Nav ids={linkIDs} offsetY={offsetY} />
         <GlobalStyle />
-        <Header id={linkIDs[0]} />
+        <Header id={linkIDs[0]} offsetY={offsetY} />
         <About id={linkIDs[1]} />
         <Separator />
         <ContactSection id={linkIDs[2]} />

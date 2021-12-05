@@ -6,10 +6,14 @@ import useScrollPosition from '../../hooks/useScrollPosition';
 
 import { TIdArray } from '../../types/types';
 
-const Nav = ({ ids }: TIdArray) => {
+type TNav = {
+  ids: string[];
+  offsetY: number;
+};
+
+const Nav = ({ ids, offsetY }: TNav) => {
   const [isSticked, setIsSticked] = useState(false);
   const [navPosition, setNavPosition] = useState(0);
-  const offsetY = useScrollPosition();
   const navRef = useRef<HTMLElement>(null);
 
   const handleResize = () => {

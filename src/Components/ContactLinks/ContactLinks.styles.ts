@@ -63,20 +63,21 @@ const ContactLink = styled.a`
   justify-content: space-between;
   color: ${({ theme }) => theme.black};
   text-decoration: none;
-  transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease;
   padding: 1.5em 0;
   font-weight: 700;
-  font-size: 1.3em;
+  font-size: 1.5em;
   & > svg {
     font-size: 1.5em;
   }
   &:hover {
-    background-color: ${({ theme }) => theme.green};
+    background-color: ${({ theme }) => theme.darkYellow};
   }
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
-    gap: 1em;
+    gap: 0.3em;
     width: 75%;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
   }
 `;
 

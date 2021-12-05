@@ -5,9 +5,12 @@ import 'swiper/css/navigation';
 import SwiperCore, { Navigation } from 'swiper';
 import { AiOutlineBarChart, AiOutlineExperiment, AiOutlineCalendar } from 'react-icons/ai';
 import Container from './AboutSection.styles';
-import Card from '../Card/Card';
-import CardTilt from '../CardContainer/CardContainer';
 import useReducedMotion from '../../hooks/useReducedMotion';
+
+import loadable from '@loadable/component';
+
+const Card = loadable(() => import('../Card/Card'));
+const CardTilt = loadable(() => import('../CardContainer/CardContainer'));
 
 SwiperCore.use([Navigation]);
 

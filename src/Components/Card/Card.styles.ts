@@ -9,6 +9,29 @@ const CardContainer = styled.article`
   flex-direction: column;
   transform: translateZ(90px) scale(0.8);
   gap: 1em;
+  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    place-items: center;
+    gap: 0;
+  }
+`;
+
+const IconContainer = styled.div`
+  width: max(10vw, 5em);
+  color: ${({ theme }) => theme.black};
+  & > svg {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+const CardDescription = styled.p`
+  color: ${({ theme }) => theme.black};
+  font-size: 2em;
+  text-align: center;
+  font-weight: 700;
+  padding: 0 0.5em;
 `;
 
 const H3 = css`
@@ -28,23 +51,6 @@ const Label = styled.h3`
   ${H3};
   top: 0;
   right: 0;
-`;
-
-const IconContainer = styled.div`
-  width: 5em;
-  color: ${({ theme }) => theme.black};
-  & > svg {
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-const CardDescription = styled.p`
-  color: ${({ theme }) => theme.black};
-  font-size: 2em;
-  text-align: center;
-  font-weight: 700;
-  padding: 0 0.5em;
 `;
 
 export { CardContainer, Heading, Label, IconContainer, CardDescription };

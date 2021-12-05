@@ -1,9 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import useMousePosition from '../../hooks/useMousePosition';
 import { PrimaryCursor, SecondaryCursor } from './Cursor.styles';
-import useReducedMotion from '../../hooks/useReducedMotion';
-
-// TODO: REFACTOR THIS SHIT :)
 
 const Cursor = function () {
   const [isActive, setIsActive] = useState(false);
