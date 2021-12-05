@@ -4,7 +4,9 @@ import { debounce } from 'lodash';
 import { NavContainer, List, ListLink, LinkAnchor } from './Nav.styles';
 import useScrollPosition from '../../hooks/useScrollPosition';
 
-const Nav: React.FC<{ ids: string[] }> = function ({ ids }) {
+import { TIdArray } from '../../types/types';
+
+const Nav = ({ ids }: TIdArray) => {
   const [isSticked, setIsSticked] = useState(false);
   const [navPosition, setNavPosition] = useState(0);
   const offsetY = useScrollPosition();
@@ -19,20 +21,16 @@ const Nav: React.FC<{ ids: string[] }> = function ({ ids }) {
   useEffect(() => {
     handleResize();
 
-    window.addEventListener('resize', debounce(handleResize, 1000), {
-      passive: true,
-    });
+    window.addEventListener('resize', debounce(handleResize, 1000));
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', debounce(handleResize, 1000));
   }, []);
 
   useEffect(() => {
-    if (navPosition !== 0) {
-      if (offsetY >= navPosition - 50) {
-        setIsSticked(true);
-      } else {
-        setIsSticked(false);
-      }
+    if (offsetY >= navPosition - 50) {
+      setIsSticked(true);
+    } else {
+      setIsSticked(false);
     }
   }, [navPosition, offsetY]);
 

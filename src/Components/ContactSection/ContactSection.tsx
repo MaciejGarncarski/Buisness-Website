@@ -1,12 +1,15 @@
 import React from 'react';
-import Map from '../Map/Map';
 import Container from './ContactSection.styles';
-import Contact from '../Contact/Contact';
+import loadable from '@loadable/component';
+import Map from '../Map/Map';
+const ContactLinks = loadable(() => import('../ContactLinks/ContactLinks'));
 
-const ContactSection: React.FC<{ id: string }> = ({ id }) => {
+import { TypeId } from '../../types/types';
+
+const ContactSection = ({ id }: TypeId) => {
   return (
     <Container id={id}>
-      <Contact />
+      <ContactLinks />
       <Map />
     </Container>
   );

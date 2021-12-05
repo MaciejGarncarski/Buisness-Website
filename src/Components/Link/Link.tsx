@@ -1,14 +1,9 @@
 import React from 'react';
 import Anchor from './Link.styles';
 
-type PLink = {
-  children: React.ReactNode;
-  href: string;
-  target: string;
-  rel: string;
-};
+import { TLink } from '../../types/types';
 
-const Link = function ({ href, target, rel, children }: PLink) {
+const Link = ({ href, target, rel, children }: TLink) => {
   return (
     <Anchor href={href} target={target} rel={rel}>
       {children}

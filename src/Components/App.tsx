@@ -3,7 +3,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import { isMobile } from 'react-device-detect';
 import Theme from './styledcomponets/Theme';
 import GlobalStyle from './styledcomponets/GlobalStyle';
-import Nav from './Nav/Nav';
 import Cursor from './Cursor/Cursor';
 import Header from './Header/Header';
 import About from './AboutSection/AboutSection';
@@ -12,6 +11,8 @@ import ContactSection from './ContactSection/ContactSection';
 import Separator from '../Components/Separator/Separator';
 import useReducedMotion from '../hooks/useReducedMotion';
 type ThemeType = typeof Theme;
+import loadable from '@loadable/component';
+const Nav = loadable(() => import('./Nav/Nav'));
 
 const MainContainer = styled.div`
   display: flex;

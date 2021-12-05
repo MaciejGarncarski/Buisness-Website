@@ -1,7 +1,6 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-
 const Map = () => {
   return (
     <MapContainer center={[50.05083, 21.40989]} zoom={13} scrollWheelZoom={true}>

@@ -1,11 +1,9 @@
 import React from 'react';
 import Message from './ScrollMessage.styles';
 
-type TMultiplayer = {
-  multiply: number;
-};
+import { TMultiply } from '../../types/types';
 
-const ScrollMessage = function ({ multiply }: TMultiplayer) {
+const ScrollMessage = function ({ multiply }: TMultiply) {
   return (
     <Message style={{ transform: `translate3d(0, ${multiply}px, 0)` }}>
       scroll down

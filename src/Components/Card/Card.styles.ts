@@ -8,7 +8,7 @@ const CardContainer = styled.article`
   align-items: center;
   flex-direction: column;
   transform: translateZ(90px) scale(0.8);
-  gap: 2em;
+  gap: 1em;
 `;
 
 const H3 = css`
@@ -44,7 +44,7 @@ const CardDescription = styled.p`
   font-size: 2em;
   text-align: center;
   font-weight: 700;
-  padding: 0 0.75em;
+  padding: 0 0.5em;
 `;
 
 export { CardContainer, Heading, Label, IconContainer, CardDescription };

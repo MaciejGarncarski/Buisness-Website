@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        cursor: none;
+        /* cursor: none; */
         @media (prefers-reduced-motion) {
             cursor: auto;
         }

@@ -11,11 +11,9 @@ import useReducedMotion from '../../hooks/useReducedMotion';
 
 SwiperCore.use([Navigation]);
 
-type TAbout = {
-  id: string;
-};
+import { TypeId } from '../../types/types';
 
-const About: React.FC<TAbout> = function ({ id }) {
+const About = function ({ id }: TypeId) {
   const usesReducedMotion = useReducedMotion();
 
   let sliderSpeed = 0;
@@ -35,7 +33,7 @@ const About: React.FC<TAbout> = function ({ id }) {
               label="1"
               heading="About"
               icon={<AiOutlineBarChart />}
-              description="Nasza firma coś coś tego typu"
+              description="Our Company is one of the best in the world. We provide best customer experience in Poland."
             />
           </CardTilt>
         </SwiperSlide>
@@ -45,7 +43,7 @@ const About: React.FC<TAbout> = function ({ id }) {
               label="2"
               heading="Products"
               icon={<AiOutlineExperiment />}
-              description="Jakieś informacje ...."
+              description="Products from our company are tested by multiple quality testers."
             />
           </CardTilt>
         </SwiperSlide>
@@ -55,7 +53,7 @@ const About: React.FC<TAbout> = function ({ id }) {
               label="3"
               heading="CO-OP"
               icon={<AiOutlineCalendar />}
-              description="Do uzupełnienia !!!"
+              description="We are opened to cooperation with other companies. Just call us."
             />
           </CardTilt>
         </SwiperSlide>

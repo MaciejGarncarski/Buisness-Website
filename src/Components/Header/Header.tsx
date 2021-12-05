@@ -6,7 +6,9 @@ import ScrollMessage from '../ScrollMessage/ScrollMessage';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import useReducedMotion from '../../hooks/useReducedMotion';
 
-const Header: React.FC<{ id: string }> = function ({ id }) {
+import { TypeId } from '../../types/types';
+
+const Header = ({ id }: TypeId) => {
   const offsetY = useScrollPosition();
   const usesReducedMotion = useReducedMotion();
 

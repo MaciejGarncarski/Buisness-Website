@@ -5,7 +5,7 @@ const Message = styled.h2`
   font-weight: 400;
   font-size: 1em;
   position: absolute;
-  bottom: 1em;
+  bottom: 5em;
   left: 0;
   width: 100%;
 `;

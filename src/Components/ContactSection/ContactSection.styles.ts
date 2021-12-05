@@ -2,15 +2,17 @@ import styled from 'styled-components';
 
 const Container = styled.section`
   width: 100%;
-  height: 35em;
-  padding: 0em 4em;
+  height: 40em;
+  padding: 0em 2.5em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 1em;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
   }
   & > div:last-child {
     width: 100%;

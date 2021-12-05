@@ -11,7 +11,7 @@ const TiltContainer = styled(Tilt)<IProps>`
   justify-content: center;
   align-items: center;
   width: max(60vw, 18em);
-  height: max(30vw, 25em);
+  height: max(30vh, 30em);
   transform: translateZ(50px);
   background: ${({ bg, theme }) => theme[bg]};
   border: 4px solid ${({ theme }) => theme.black};

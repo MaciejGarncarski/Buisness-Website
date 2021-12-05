@@ -1,14 +1,9 @@
 import React from 'react';
 import { CardContainer, Label, Heading, IconContainer, CardDescription } from './Card.styles';
 
-interface TCard {
-  label: string;
-  heading: string;
-  description: string;
-  icon: React.ReactNode;
-}
+import { TCard } from '../../types/types';
 
-const Card = function ({ label, heading, description, icon }: TCard) {
+const Card = ({ label, heading, description, icon }: TCard) => {
   return (
     <CardContainer>
       <Label>0{label}.</Label>
