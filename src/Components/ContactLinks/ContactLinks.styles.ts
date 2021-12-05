@@ -6,6 +6,7 @@ const pseudoElement = css`
   content: '';
   position: absolute;
   z-index: -1;
+  opacity: 0.8;
 `;
 
 const bgSizeRepeat = css`
@@ -67,26 +68,27 @@ const ContactLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-decoration: none;
+  border: 4px solid transparent;
   padding: 1.5em 0;
   font-weight: 700;
   font-size: 1.3em;
-  border: 4px solid transparent;
-  transition: all ease-in-out 400ms;
+  text-decoration: none;
+  transition: all ease-in-out 200ms;
   transition-property: background-color, border-color;
-  & > svg {
-    font-size: 1.5em;
+  width: 100%;
+  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+    gap: 0.3em;
+    width: 75%;
+    justify-content: center;
+    flex-direction: column;
   }
   &:hover,
   :focus {
     background-color: ${({ theme }) => theme.darkYellow};
     border-color: ${({ theme }) => theme.black};
   }
-  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
-    gap: 0.3em;
-    width: 75%;
-    justify-content: center;
-    flex-direction: column;
+  & > svg {
+    font-size: 1.5em;
   }
 `;
 

@@ -8,8 +8,8 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
   flex-direction: column;
   align-items: center;
   background: ${({ theme }) => theme.darkYellow};
-  border-top: 1.5px solid ${({ theme }) => theme.green};
-  border-bottom: 1.5px solid ${({ theme }) => theme.green};
+  border-top: 1px solid ${({ theme }) => theme.blue};
+  border-bottom: 1px solid ${({ theme }) => theme.blue};
   position: ${({ isSticked }) => (isSticked ? 'fixed' : 'absolute')};
   left: 0;
   ${({ isSticked }) =>
@@ -32,9 +32,6 @@ const List = styled.ul`
 `;
 
 const ListLink = styled.li`
-  background: ${({ theme }) => theme.green};
-  border: 2px solid ${({ theme }) => theme.black};
-  box-shadow: -0.25em 0.25em ${({ theme }) => theme.blue};
   display: flex;
   justify-content: center;
   @supports (not (gap: 10px)) {
@@ -44,11 +41,24 @@ const ListLink = styled.li`
 
 const LinkAnchor = styled.a`
   color: ${({ theme }) => theme.black};
+  background: ${({ theme }) => theme.green};
+  border: 2px solid ${({ theme }) => theme.black};
+  box-shadow: -0.25em 0.25em ${({ theme }) => theme.blue};
   text-decoration: none;
   display: block;
   padding: 0.4em 1.65em;
   width: 100%;
   height: 100%;
+  transition: all ease-in-out 200ms;
+  transition-property: outline, transform, color;
+  &:hover,
+  :focus {
+    transform: scale(1.15);
+    outline: 2px solid ${({ theme }) => theme.blue};
+    outline-offset: -2px;
+    color: ${({ theme }) => theme.blue};
+    border-color: none;
+  }
   & > svg {
     width: 1.6em;
     height: 100%;

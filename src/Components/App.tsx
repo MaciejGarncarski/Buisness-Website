@@ -7,7 +7,7 @@ import GlobalStyle from './styledcomponets/GlobalStyle';
 import ContactSection from './ContactSection/ContactSection';
 import Separator from '../Components/Separator/Separator';
 import useReducedMotion from '../hooks/useReducedMotion';
-import About from './AboutSection/AboutSection';
+import CardSection from './CardSection/CardSection';
 import useScrollPosition from '../hooks/useScrollPosition';
 
 const Nav = loadable(() => import('./Nav/Nav'));
@@ -41,7 +41,7 @@ const App = function () {
         <Nav ids={linkIDs} offsetY={offsetY} />
         <GlobalStyle />
         <Header id={linkIDs[0]} offsetY={offsetY} />
-        <About id={linkIDs[1]} />
+        <CardSection id={linkIDs[1]} />
         <Separator />
         <ContactSection id={linkIDs[2]} />
         <Footer />

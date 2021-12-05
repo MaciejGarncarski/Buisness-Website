@@ -18,7 +18,7 @@ const ContactLinks = () => {
         </ContactLink>
       </li>
       <li>
-        <ContactLink href="#">
+        <ContactLink href="#contact">
           <AiOutlineClockCircle />
           <p>Pn-Pt: 8:00-16:00</p>
         </ContactLink>

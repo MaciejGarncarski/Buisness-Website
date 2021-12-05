@@ -10,7 +10,6 @@ const Footer = function () {
   return (
     <FooterContainer>
       <Para>
-        &copy;
         <Link href="https://github.com/maciejgarncarski" target="_blank" rel="noopener noreferrer">
           Maciej Garncarski
         </Link>

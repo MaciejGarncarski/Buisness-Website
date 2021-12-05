@@ -16,18 +16,17 @@ const Nav = ({ ids, offsetY }: TNav) => {
   const [navPosition, setNavPosition] = useState(0);
   const navRef = useRef<HTMLElement>(null);
 
-  const handleResize = () => {
-    if (navRef.current) {
-      setNavPosition(navRef.current.offsetTop);
-    }
-  };
-
   useEffect(() => {
+    const handleResize = () => {
+      if (navRef.current) {
+        setNavPosition(navRef.current.offsetTop);
+      }
+    };
     handleResize();
 
-    window.addEventListener('resize', debounce(handleResize, 1000));
+    window.addEventListener('resize', debounce(handleResize, 500));
 
-    return () => window.removeEventListener('resize', debounce(handleResize, 1000));
+    return () => window.removeEventListener('resize', debounce(handleResize, 500));
   }, []);
 
   useEffect(() => {
