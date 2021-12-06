@@ -4,13 +4,9 @@ import { HeaderContainer, H1, Description } from './Header.styles';
 import { Triangle, Rectangle, Circle } from '../Shapes/Shapes';
 import useReducedMotion from '../../hooks/useReducedMotion';
 import { heading, description } from './Header.data';
+import { TIdOffset } from '../../types/types';
 
-interface THeader {
-  id: string;
-  offsetY: number;
-}
-
-const Header = ({ id, offsetY }: THeader) => {
+const Header = ({ id, offsetY }: TIdOffset) => {
   const usesReducedMotion = useReducedMotion();
 
   let multiply = 0;

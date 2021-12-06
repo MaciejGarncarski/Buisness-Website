@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { isMobile } from 'react-device-detect';
 import loadable from '@loadable/component';
+import { isMobile } from 'react-device-detect';
 import Theme from './styledcomponets/Theme';
 import GlobalStyle from './styledcomponets/GlobalStyle';
 import ContactSection from './ContactSection/ContactSection';
@@ -9,6 +9,7 @@ import Separator from '../Components/Separator/Separator';
 import useReducedMotion from '../hooks/useReducedMotion';
 import CardSection from './CardSection/CardSection';
 import useScrollPosition from '../hooks/useScrollPosition';
+import { CursorContextProvider } from '../context/cursorHoverContext';
 
 const Nav = loadable(() => import('./Nav/Nav'));
 const Header = loadable(() => import('./Header/Header'));
@@ -35,18 +36,20 @@ const App = function () {
   const offsetY = useScrollPosition();
   const usesReducedMotion = useReducedMotion();
   return (
-    <ThemeProvider theme={Theme}>
-      {!isMobile && !usesReducedMotion && <Cursor />}
-      <MainContainer>
-        <Nav ids={linkIDs} offsetY={offsetY} />
+    <CursorContextProvider>
+      <ThemeProvider theme={Theme}>
         <GlobalStyle />
-        <Header id={linkIDs[0]} offsetY={offsetY} />
-        <CardSection id={linkIDs[1]} />
-        <Separator />
-        <ContactSection id={linkIDs[2]} />
-        <Footer />
-      </MainContainer>
-    </ThemeProvider>
+        {!isMobile && !usesReducedMotion && <Cursor />}
+        <MainContainer>
+          <Nav ids={linkIDs} offsetY={offsetY} />
+          <Header id={linkIDs[0]} offsetY={offsetY} />
+          <CardSection id={linkIDs[1]} />
+          <Separator />
+          <ContactSection id={linkIDs[2]} />
+          <Footer />
+        </MainContainer>
+      </ThemeProvider>
+    </CursorContextProvider>
   );
 };
 

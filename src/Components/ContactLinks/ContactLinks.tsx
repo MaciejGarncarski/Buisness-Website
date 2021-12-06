@@ -1,10 +1,15 @@
 import React from 'react';
 import { AiOutlinePhone, AiOutlineMail, AiOutlineClockCircle } from 'react-icons/ai';
+import { useCursorContext } from '../../context/cursorHoverContext';
 import { Container, ContactLink } from './ContactLinks.styles';
 
 const ContactLinks = () => {
+  const cursorHoverState = useCursorContext();
   return (
-    <Container>
+    <Container
+      onMouseOver={() => cursorHoverState.dispatch({ type: 'active' })}
+      onMouseLeave={() => cursorHoverState.dispatch({ type: 'static' })}
+    >
       <li>
         <ContactLink href="tel:+48000000000">
           <AiOutlinePhone />

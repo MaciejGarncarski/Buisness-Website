@@ -11,7 +11,7 @@ const Triangle = function ({ multiply }: TMultiply) {
   return (
     <TriangleContainer
       style={{
-        transform: `translate3d(0, ${multiply}px, 0)`,
+        transform: `translate3d(0, ${multiply + 0.1}px, 0)`,
       }}
     >
       <ImgFullSize src={triangle} alt="Triangle" />
@@ -23,7 +23,7 @@ const Rectangle = function ({ multiply }: TMultiply) {
   return (
     <RectangleContainer
       style={{
-        transform: `translate3d(0, ${multiply}px, 0)`,
+        transform: `translate3d(0, ${multiply - 0.1}px, 0)`,
       }}
     >
       <ImgFullSize src={rectangle} alt="Triangle" />

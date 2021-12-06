@@ -1,14 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
 import { debounce } from 'lodash';
-import { NavContainer, List, ListLink, LinkAnchor } from './Nav.styles';
-import useScrollPosition from '../../hooks/useScrollPosition';
+import { NavContainer, List, ListLinkStyle, LinkAnchor } from './Nav.styles';
+import { useCursorContext } from '../../context/cursorHoverContext';
 
-import { TIdArray } from '../../types/types';
+import { TChildren, TNav } from '../../types/types';
 
-type TNav = {
-  ids: string[];
-  offsetY: number;
+const ListLink = ({ children }: TChildren) => {
+  const cursorHoverState = useCursorContext();
+  return (
+    <ListLinkStyle
+      onMouseOver={() => cursorHoverState.dispatch({ type: 'active' })}
+      onMouseLeave={() => cursorHoverState.dispatch({ type: 'static' })}
+    >
+      {children}
+    </ListLinkStyle>
+  );
 };
 
 const Nav = ({ ids, offsetY }: TNav) => {
@@ -23,7 +30,6 @@ const Nav = ({ ids, offsetY }: TNav) => {
       }
     };
     handleResize();
-
     window.addEventListener('resize', debounce(handleResize, 500));
 
     return () => window.removeEventListener('resize', debounce(handleResize, 500));

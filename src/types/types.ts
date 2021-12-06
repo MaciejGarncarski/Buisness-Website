@@ -1,6 +1,11 @@
+import { ReactNode } from 'react';
+
 export type TypeId = {
   id: string;
-  offsetY?: number;
+};
+
+export type TIdOffset = TypeId & {
+  offsetY: number;
 };
 
 export type TIdArray = {
@@ -29,4 +34,12 @@ export type TLink = {
 
 export type TMultiply = {
   multiply: number;
+};
+
+export type TNav = TIdArray & {
+  offsetY: number;
+};
+
+export type TChildren = {
+  children: ReactNode;
 };

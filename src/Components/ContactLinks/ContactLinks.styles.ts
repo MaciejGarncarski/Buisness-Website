@@ -54,7 +54,7 @@ const Container = styled.ul`
       display: block;
       width: 14vw;
       height: 14vw;
-      right: 5vw;
+      right: 1vw;
       bottom: 3vh;
       background: url('${square}');
       ${bgSizeRepeat};

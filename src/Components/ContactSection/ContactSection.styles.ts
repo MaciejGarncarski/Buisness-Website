@@ -20,6 +20,7 @@ const Container = styled.section`
     height: 100%;
     box-shadow: -1em 1em ${({ theme }) => theme.blue};
     border: 4px solid ${({ theme }) => theme.black};
+    grid-column: 2;
   }
 `;
 
