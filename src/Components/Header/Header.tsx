@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
 import { HeaderContainer, H1, Description } from './Header.styles';
 import { Triangle, Rectangle, Circle } from '../Shapes/Shapes';
-import useReducedMotion from '../../hooks/useReducedMotion';
+import useReducedMotion from '../../Hooks/useReducedMotion';
 import { heading, description } from './Header.data';
-import { TIdOffset } from '../../types/types';
+import { TIdOffset } from '../../Types/types';
 
 const Header = ({ id, offsetY }: TIdOffset) => {
   const usesReducedMotion = useReducedMotion();

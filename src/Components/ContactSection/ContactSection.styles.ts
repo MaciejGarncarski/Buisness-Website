@@ -16,6 +16,9 @@ const Container = styled.section`
     height: 30em;
   }
   & > div:last-child {
+    & a {
+      cursor: pointer;
+    }
     width: 100%;
     height: 100%;
     box-shadow: -1em 1em ${({ theme }) => theme.blue};

@@ -7,6 +7,7 @@ const pseudoElement = css`
   position: absolute;
   z-index: -1;
   opacity: 0.8;
+  display: block;
 `;
 
 const bgSizeRepeat = css`
@@ -69,9 +70,9 @@ const ContactLink = styled.a`
   align-items: center;
   justify-content: space-between;
   border: 4px solid transparent;
-  padding: 1.5em 0;
+  padding: 1.3em 0;
   font-weight: 700;
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-decoration: none;
   transition: all ease-in-out 300ms;
   transition-property: background-color, border-color;
@@ -83,7 +84,7 @@ const ContactLink = styled.a`
     flex-direction: column;
   }
   &:hover,
-  :focus {
+  &:focus {
     background-color: ${({ theme }) => theme.darkYellow};
     border-color: ${({ theme }) => theme.black};
   }

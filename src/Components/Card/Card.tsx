@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardContainer, Label, Heading, IconContainer, CardDescription } from './Card.styles';
 
-import { TCard } from '../../types/types';
+import { TCard } from '../../Types/types';
 
 const Card = ({ label, heading, description, icon }: TCard) => {
   return (

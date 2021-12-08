@@ -20,7 +20,7 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
       : `
     bottom: 0;
   `}
-  z-index: 9999;
+  z-index: 29;
 `;
 
 const List = styled.ul`

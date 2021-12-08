@@ -5,7 +5,7 @@ import triangle from '../../Assets/Header/triangle.svg';
 import circle from '../../Assets/Header/circle.svg';
 import rectangle from '../../Assets/Header/rectangle.svg';
 
-import { TMultiply } from '../../types/types';
+import { TMultiply } from '../../Types/types';
 
 const Triangle = function ({ multiply }: TMultiply) {
   return (

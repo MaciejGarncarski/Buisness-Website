@@ -1,10 +1,9 @@
-import React from 'react';
 import Container from './ContactSection.styles';
 import loadable from '@loadable/component';
 import Map from '../Map/Map';
 const ContactLinks = loadable(() => import('../ContactLinks/ContactLinks'));
 
-import { TypeId } from '../../types/types';
+import { TypeId } from '../../Types/types';
 
 const ContactSection = ({ id }: TypeId) => {
   return (

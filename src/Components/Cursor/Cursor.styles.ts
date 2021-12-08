@@ -7,13 +7,14 @@ const PrimaryCursor = styled.div`
   border-radius: 50%;
   pointer-events: none;
   transform: translate3d(0, 0, 0);
-  z-index: 10001;
+  z-index: 31;
   position: fixed;
   left: 0;
   top: 0;
   transition: all 300ms ease-in-out;
   transition-property: background-color;
-  &.active {
+  &.active,
+  &.clicked {
     background-color: ${({ theme }) => theme.black};
   }
 `;
@@ -25,14 +26,15 @@ const SecondaryCursor = styled.div`
   border-radius: 50%;
   pointer-events: none;
   transform: translate3d(0, 0, 0);
-  z-index: 10000;
+  z-index: 30;
   position: fixed;
   left: 0;
   top: 0;
   transition: all 300ms ease-in-out;
   transition-property: background-color;
-  &.active {
-    background-color: ${({ theme }) => theme.blue};
+  &.active,
+  &.clicked {
+    background-color: ${({ theme }) => theme.green};
   }
 `;
 

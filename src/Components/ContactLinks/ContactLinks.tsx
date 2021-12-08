@@ -1,20 +1,22 @@
 import React from 'react';
 import { AiOutlinePhone, AiOutlineMail, AiOutlineClockCircle } from 'react-icons/ai';
-import { useCursorContext } from '../../context/cursorHoverContext';
-import { TChildren } from '../../types/types';
+import { useCursorContext } from '../../Contexts/CursorContext';
+import { TChildren } from '../../Types/types';
 import { Container, ContactLink as ContactLinkStyle } from './ContactLinks.styles';
 
 type TChildrenHref = TChildren & {
   href: string;
+  title: string;
 };
 
-const ContactLink = ({ children, href }: TChildrenHref) => {
-  const cursorHoverState = useCursorContext();
+const ContactLink = ({ children, href, title }: TChildrenHref) => {
+  const { setIsActive } = useCursorContext();
   return (
     <ContactLinkStyle
       href={href}
-      onMouseOver={() => cursorHoverState.dispatch({ type: 'active' })}
-      onMouseLeave={() => cursorHoverState.dispatch({ type: 'static' })}
+      title={title}
+      onMouseOver={() => setIsActive(true)}
+      onMouseLeave={() => setIsActive(false)}
     >
       {children}
     </ContactLinkStyle>
@@ -25,21 +27,21 @@ const ContactLinks = () => {
   return (
     <Container>
       <li>
-        <ContactLink href="tel:+48000000000">
+        <ContactLink href="tel:+48000000000 " title="Phone number">
           <AiOutlinePhone />
           <p>+48-000-000-000</p>
         </ContactLink>
       </li>
       <li>
-        <ContactLink href="mailto:maciejg0220@gmail.com">
+        <ContactLink href="mailto:contactemail@email.com" title="Email">
           <AiOutlineMail />
-          <p>maciejg0220@gmail.com</p>
+          <p>contactemail@email.com</p>
         </ContactLink>
       </li>
       <li>
-        <ContactLink href="#contact">
+        <ContactLink href="#contact" title="Opened in this hours">
           <AiOutlineClockCircle />
-          <p>Pn-Pt: 8:00-16:00</p>
+          <p>Monday - Friday : 8:00-16:00</p>
         </ContactLink>
       </li>
     </Container>

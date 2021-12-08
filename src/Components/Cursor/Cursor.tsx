@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
-import useMousePosition from '../../hooks/useMousePosition';
+import useMousePosition from '../../Hooks/useMousePosition';
 import { PrimaryCursor, SecondaryCursor } from './Cursor.styles';
-import { useCursorContext } from '../../context/cursorHoverContext';
+import { useCursorContext } from '../../Contexts/CursorContext';
 
 const Cursor = function () {
-  const cursorHoverState = useCursorContext();
+  const { isActive } = useCursorContext();
   const { clientX, clientY } = useMousePosition();
   const primaryCursor = useRef<HTMLDivElement>(null);
   const secondaryCursor = useRef<HTMLDivElement>(null);
@@ -59,10 +59,24 @@ const Cursor = function () {
     followMouse();
   }, [position]);
 
+  useEffect(() => {
+    const handleClick = async () => {
+      primaryCursor.current?.classList.add('clicked');
+      secondaryCursor.current?.classList.add('clicked');
+      setTimeout(() => {
+        primaryCursor.current?.classList.remove('clicked');
+        secondaryCursor.current?.classList.remove('clicked');
+      }, 500);
+    };
+
+    window.addEventListener('click', handleClick);
+    return () => window.removeEventListener('click', handleClick);
+  }, []);
+
   return (
     <div>
-      <PrimaryCursor ref={primaryCursor} className={cursorHoverState.state ? 'active' : ''} />
-      <SecondaryCursor ref={secondaryCursor} className={cursorHoverState.state ? 'active' : ''} />
+      <PrimaryCursor ref={primaryCursor} className={isActive ? 'active' : ''} />
+      <SecondaryCursor ref={secondaryCursor} className={isActive ? 'active' : ''} />
     </div>
   );
 };

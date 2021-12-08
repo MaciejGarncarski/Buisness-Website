@@ -2,17 +2,14 @@ import React, { useEffect, useState, useRef } from 'react';
 import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
 import { debounce } from 'lodash';
 import { NavContainer, List, ListLink as ListLinkStyle, LinkAnchor } from './Nav.styles';
-import { useCursorContext } from '../../context/cursorHoverContext';
+import { useCursorContext } from '../../Contexts/CursorContext';
 
-import { TChildren, TNav } from '../../types/types';
+import { TChildren, TNav } from '../../Types/types';
 
 const ListLink = ({ children }: TChildren) => {
-  const cursorHoverState = useCursorContext();
+  const { setIsActive } = useCursorContext();
   return (
-    <ListLinkStyle
-      onMouseOver={() => cursorHoverState.dispatch({ type: 'active' })}
-      onMouseLeave={() => cursorHoverState.dispatch({ type: 'static' })}
-    >
+    <ListLinkStyle onMouseOver={() => setIsActive(true)} onMouseLeave={() => setIsActive(false)}>
       {children}
     </ListLinkStyle>
   );
@@ -53,17 +50,17 @@ const Nav = ({ ids, offsetY }: TNav) => {
     >
       <List>
         <ListLink>
-          <LinkAnchor href={`#${ids[0]}`} title="home page">
+          <LinkAnchor href={`#${ids[0]}`} title="Header">
             <AiOutlineHome />
           </LinkAnchor>
         </ListLink>
         <ListLink>
-          <LinkAnchor href={`#${ids[1]}`} title="about our firma">
+          <LinkAnchor href={`#${ids[1]}`} title="About us">
             <AiOutlineUser />
           </LinkAnchor>
         </ListLink>
         <ListLink>
-          <LinkAnchor href={`#${ids[2]}`} title="test">
+          <LinkAnchor href={`#${ids[2]}`} title="Contact">
             <AiOutlinePhone />
           </LinkAnchor>
         </ListLink>

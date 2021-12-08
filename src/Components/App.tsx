@@ -6,10 +6,10 @@ import Theme from './styledcomponets/Theme';
 import GlobalStyle from './styledcomponets/GlobalStyle';
 import ContactSection from './ContactSection/ContactSection';
 import Separator from '../Components/Separator/Separator';
-import useReducedMotion from '../hooks/useReducedMotion';
+import useReducedMotion from '../Hooks/useReducedMotion';
 import CardSection from './CardSection/CardSection';
-import useScrollPosition from '../hooks/useScrollPosition';
-import { CursorContextProvider } from '../context/cursorHoverContext';
+import useScrollPosition from '../Hooks/useScrollPosition';
+import { CursorProvider } from '../Contexts/CursorContext';
 
 const Nav = loadable(() => import('./Nav/Nav'));
 const Header = loadable(() => import('./Header/Header'));
@@ -36,7 +36,7 @@ const App = function () {
   const offsetY = useScrollPosition();
   const usesReducedMotion = useReducedMotion();
   return (
-    <CursorContextProvider>
+    <CursorProvider>
       <ThemeProvider theme={Theme}>
         <GlobalStyle />
         {!isMobile && !usesReducedMotion && <Cursor />}
@@ -49,7 +49,7 @@ const App = function () {
           <Footer />
         </MainContainer>
       </ThemeProvider>
-    </CursorContextProvider>
+    </CursorProvider>
   );
 };
 
