@@ -31,7 +31,7 @@ const List = styled.ul`
   }
 `;
 
-const ListLinkStyle = styled.li`
+const ListLink = styled.li`
   display: flex;
   justify-content: center;
   @supports (not (gap: 10px)) {
@@ -65,4 +65,4 @@ const LinkAnchor = styled.a`
   }
 `;
 
-export { NavContainer, List, ListLinkStyle, LinkAnchor };
+export { NavContainer, List, ListLink, LinkAnchor };

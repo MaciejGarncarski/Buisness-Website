@@ -73,7 +73,7 @@ const ContactLink = styled.a`
   font-weight: 700;
   font-size: 1.3em;
   text-decoration: none;
-  transition: all ease-in-out 200ms;
+  transition: all ease-in-out 300ms;
   transition-property: background-color, border-color;
   width: 100%;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {

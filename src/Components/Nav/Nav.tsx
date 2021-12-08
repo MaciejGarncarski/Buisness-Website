@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
 import { debounce } from 'lodash';
-import { NavContainer, List, ListLinkStyle, LinkAnchor } from './Nav.styles';
+import { NavContainer, List, ListLink as ListLinkStyle, LinkAnchor } from './Nav.styles';
 import { useCursorContext } from '../../context/cursorHoverContext';
 
 import { TChildren, TNav } from '../../types/types';

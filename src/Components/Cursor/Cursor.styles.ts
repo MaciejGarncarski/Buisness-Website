@@ -11,7 +11,7 @@ const PrimaryCursor = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  transition: all 150ms ease-in-out;
+  transition: all 300ms ease-in-out;
   transition-property: background-color;
   &.active {
     background-color: ${({ theme }) => theme.black};
@@ -29,7 +29,7 @@ const SecondaryCursor = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  transition: all 150ms ease-in-out;
+  transition: all 300ms ease-in-out;
   transition-property: background-color;
   &.active {
     background-color: ${({ theme }) => theme.blue};
