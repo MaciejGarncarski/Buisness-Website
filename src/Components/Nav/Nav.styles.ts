@@ -12,6 +12,7 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
   border-bottom: 1px solid ${({ theme }) => theme.blue};
   position: ${({ isSticked }) => (isSticked ? 'fixed' : 'absolute')};
   left: 0;
+  z-index: 1001;
   ${({ isSticked }) =>
     isSticked
       ? `
@@ -20,7 +21,6 @@ const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
       : `
     bottom: 0;
   `}
-  z-index: 29;
 `;
 
 const List = styled.ul`

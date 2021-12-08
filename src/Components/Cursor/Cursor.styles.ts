@@ -17,6 +17,7 @@ const PrimaryCursor = styled.div`
   &.clicked {
     background-color: ${({ theme }) => theme.black};
   }
+  z-index: 1003;
 `;
 
 const SecondaryCursor = styled.div`
@@ -32,6 +33,7 @@ const SecondaryCursor = styled.div`
   top: 0;
   transition: all 300ms ease-in-out;
   transition-property: background-color;
+  z-index: 1002;
   &.active,
   &.clicked {
     background-color: ${({ theme }) => theme.green};
