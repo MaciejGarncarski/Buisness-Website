@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         background-color: ${({ theme }) => theme.yellow};
         min-height: 100vh;
+        min-height: -webkit-fill-available;
         font-family: 'Roboto Slab', serif;
     }
     ${SwiperStyles};

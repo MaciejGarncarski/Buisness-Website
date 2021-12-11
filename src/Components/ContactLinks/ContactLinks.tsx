@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlinePhone, AiOutlineMail, AiOutlineClockCircle } from 'react-icons/ai';
 import { useCursorContext } from '../../Contexts/CursorContext';
 import { TChildren } from '../../Types/types';
