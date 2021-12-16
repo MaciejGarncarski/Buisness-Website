@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
 import { HeaderContainer, H1, Description } from './Header.styles';
 import { Triangle, Rectangle, Circle } from '../Shapes/Shapes';

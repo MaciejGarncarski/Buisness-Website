@@ -68,9 +68,10 @@ const ContactLink = styled.a`
   color: ${({ theme }) => theme.black};
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   border: 4px solid transparent;
-  padding: 1.3em 0;
+  padding: 0.7em 0;
   font-weight: 700;
   font-size: 1.5em;
   text-decoration: none;
@@ -80,8 +81,6 @@ const ContactLink = styled.a`
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     gap: 0.3em;
     width: 75%;
-    justify-content: center;
-    flex-direction: column;
   }
   &:hover,
   &:focus {

@@ -41,13 +41,7 @@ const Nav = ({ ids, offsetY }: TNav) => {
   }, [navPosition, offsetY]);
 
   return (
-    <NavContainer
-      ref={navRef}
-      isSticked={isSticked}
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-    >
+    <NavContainer ref={navRef} isSticked={isSticked}>
       <List>
         <ListLink>
           <LinkAnchor href={`#${ids[0]}`} title="Header">

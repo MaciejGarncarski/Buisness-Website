@@ -9,7 +9,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

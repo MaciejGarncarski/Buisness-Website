@@ -1,7 +1,8 @@
 import { AiOutlineBarChart, AiOutlineExperiment, AiOutlineCalendar } from 'react-icons/ai';
 import useReducedMotion from '../../Hooks/useReducedMotion';
 import Container from './CardSection.styles';
-import loadable from '@loadable/component';
+import Card from '../Card/Card';
+import CardTilt from '../CardContainer/CardContainer';
 import { TypeId } from '../../Types/types';
 import { data } from './Cards.data';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,8 +10,6 @@ import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 SwiperCore.use([Navigation]);
-const Card = loadable(() => import('../Card/Card'));
-const CardTilt = loadable(() => import('../CardContainer/CardContainer'));
 
 const CardSection = function ({ id }: TypeId) {
   const usesReducedMotion = useReducedMotion();
