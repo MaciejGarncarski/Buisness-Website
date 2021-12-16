@@ -11,8 +11,8 @@ const CardContainer = styled.article`
   gap: 1em;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     display: grid;
-    grid-template-columns: 30% 1fr;
     place-items: center;
+    grid-template-columns: 30% 1fr;
     gap: 0;
   }
 `;
@@ -30,14 +30,13 @@ const CardDescription = styled.p`
   color: ${({ theme }) => theme.black};
   font-size: 2em;
   text-align: center;
-  font-weight: 700;
   padding: 0 0.5em;
 `;
 
 const H3 = css`
   position: absolute;
   font-size: 1.5em;
-  font-weight: 400;
+  font-weight: 700;
   color: ${({ theme }) => theme.black};
 `;
 

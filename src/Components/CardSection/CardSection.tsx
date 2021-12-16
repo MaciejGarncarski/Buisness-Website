@@ -1,20 +1,16 @@
-import React from 'react';
+import { AiOutlineBarChart, AiOutlineExperiment, AiOutlineCalendar } from 'react-icons/ai';
+import useReducedMotion from '../../Hooks/useReducedMotion';
+import Container from './CardSection.styles';
+import loadable from '@loadable/component';
+import { TypeId } from '../../Types/types';
+import { data } from './Cards.data';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import SwiperCore, { Navigation } from 'swiper';
-import { AiOutlineBarChart, AiOutlineExperiment, AiOutlineCalendar } from 'react-icons/ai';
-import Container from './CardSection.styles';
-import useReducedMotion from '../../Hooks/useReducedMotion';
-
-import loadable from '@loadable/component';
-
+SwiperCore.use([Navigation]);
 const Card = loadable(() => import('../Card/Card'));
 const CardTilt = loadable(() => import('../CardContainer/CardContainer'));
-
-SwiperCore.use([Navigation]);
-
-import { TypeId } from '../../Types/types';
 
 const CardSection = function ({ id }: TypeId) {
   const usesReducedMotion = useReducedMotion();
@@ -27,36 +23,49 @@ const CardSection = function ({ id }: TypeId) {
   };
   checkSliderSpeed();
 
+  const variants = {
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1.4,
+        ease: 'backInOut',
+      },
+    },
+    hidden: {
+      opacity: 0,
+    },
+  };
+
   return (
-    <Container id={id}>
-      <Swiper navigation speed={sliderSpeed} effect="flip" autoplay>
+    <Container id={id} variants={variants} initial="hidden" whileInView="visible">
+      <Swiper navigation speed={sliderSpeed}>
         <SwiperSlide>
           <CardTilt bg="green" border="blue">
             <Card
-              label="1"
-              heading="About"
+              label={data[0].label}
+              heading={data[0].heading}
               icon={<AiOutlineBarChart />}
-              description="Our Company is one of the best in the world. We provide best customer experience in Poland."
+              description={data[0].description}
             />
           </CardTilt>
         </SwiperSlide>
         <SwiperSlide>
           <CardTilt bg="darkYellow" border="green">
             <Card
-              label="2"
-              heading="Services"
+              label={data[1].label}
+              heading={data[1].heading}
               icon={<AiOutlineExperiment />}
-              description="Courses from our company are tested by multiple quality testers and have got"
+              description={data[1].description}
             />
           </CardTilt>
         </SwiperSlide>
         <SwiperSlide>
           <CardTilt bg="green" border="blue">
             <Card
-              label="3"
-              heading="CO-OP"
+              label={data[2].label}
+              heading={data[2].heading}
               icon={<AiOutlineCalendar />}
-              description="We are opened to cooperation with other companies. Just call us."
+              description={data[2].description}
             />
           </CardTilt>
         </SwiperSlide>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { TriangleContainer, RectangleContainer, CircleContainer } from './Shape.styles';
 import ImgFullSize from '../ImgFullSize/ImgFullSize';
 import triangle from '../../Assets/Header/triangle.svg';

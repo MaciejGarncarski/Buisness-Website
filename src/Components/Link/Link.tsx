@@ -1,4 +1,3 @@
-import React from 'react';
 import Anchor from './Link.styles';
 import { useCursorContext } from '../../Contexts/CursorContext';
 import { TLink } from '../../Types/types';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { CardContainer, Label, Heading, IconContainer, CardDescription } from './Card.styles';
 
 import { TCard } from '../../Types/types';

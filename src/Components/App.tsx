@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import loadable from '@loadable/component';
 import { isMobile } from 'react-device-detect';
@@ -12,25 +11,20 @@ import useScrollPosition from '../Hooks/useScrollPosition';
 import { CursorProvider } from '../Contexts/CursorContext';
 
 const Nav = loadable(() => import('./Nav/Nav'));
-const Header = loadable(() => import('./Header/Header'));
+const HeaderSection = loadable(() => import('./HeaderSection/HeaderSection'));
 const Cursor = loadable(() => import('./Cursor/Cursor'));
 const Footer = loadable(() => import('./Footer/Footer'));
 
-type ThemeType = typeof Theme;
-
-const MainContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: max(10vh, 9em);
+  row-gap: 2em;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
-  > nav {
-    color: ${({ theme }) => theme.color};
-  }
 `;
 
-const linkIDs = ['header', 'about', 'contact'];
+const linkIDs = ['home', 'about', 'contact'];
 
 const App = function () {
   const offsetY = useScrollPosition();
@@ -40,18 +34,18 @@ const App = function () {
       <ThemeProvider theme={Theme}>
         <GlobalStyle />
         {!isMobile && !usesReducedMotion && <Cursor />}
-        <MainContainer>
+        <Container>
+          <HeaderSection id={linkIDs[0]} offsetY={offsetY} />
           <Nav ids={linkIDs} offsetY={offsetY} />
-          <Header id={linkIDs[0]} offsetY={offsetY} />
           <CardSection id={linkIDs[1]} />
           <Separator />
           <ContactSection id={linkIDs[2]} />
           <Footer />
-        </MainContainer>
+        </Container>
       </ThemeProvider>
     </CursorProvider>
   );
 };
 
-export type { ThemeType };
+export type ThemeType = typeof Theme;
 export default App;

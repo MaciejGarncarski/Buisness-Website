@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import triangle from '../../Assets/Header/triangle.svg';
 import square from '../../Assets/Header/rectangle.svg';
-
+import { motion } from 'framer-motion';
 const pseudoElement = css`
   content: '';
   position: absolute;
@@ -15,7 +15,7 @@ const bgSizeRepeat = css`
   background-repeat: no-repeat;
 `;
 
-const Container = styled.ul`
+const Container = styled(motion.ul)`
   position: relative;
   display: flex;
   justify-content: center;
@@ -75,7 +75,7 @@ const ContactLink = styled.a`
   font-size: 1.5em;
   text-decoration: none;
   transition: all ease-in-out 300ms;
-  transition-property: background-color, border-color;
+  transition-property: transform;
   width: 100%;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     gap: 0.3em;
@@ -85,8 +85,7 @@ const ContactLink = styled.a`
   }
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.darkYellow};
-    border-color: ${({ theme }) => theme.black};
+    transform: scale(1.1);
   }
   & > svg {
     font-size: 1.5em;

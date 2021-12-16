@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
 import { debounce } from 'lodash';
 import { NavContainer, List, ListLink as ListLinkStyle, LinkAnchor } from './Nav.styles';

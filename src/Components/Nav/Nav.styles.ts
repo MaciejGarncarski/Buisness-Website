@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
-const NavContainer = styled(motion.nav)<{ isSticked: boolean }>`
+const NavContainer = styled.nav<{ isSticked: boolean }>`
   width: 100%;
   padding: 1.5em;
   display: flex;
@@ -57,7 +56,7 @@ const LinkAnchor = styled.a`
     outline: 2px solid ${({ theme }) => theme.blue};
     outline-offset: -2px;
     color: ${({ theme }) => theme.blue};
-    border-color: none;
+    border-color: transparent;
   }
   & > svg {
     width: 1.6em;

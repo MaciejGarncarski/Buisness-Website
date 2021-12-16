@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div.attrs({
+  role: 'img',
+  ariaLabel: 'Decoration shape',
+  title: 'Decoration shape',
+})`
   width: clamp(7.8em, 20vw, 10em);
   height: clamp(7.8em, 20vw, 10em);
   position: absolute;

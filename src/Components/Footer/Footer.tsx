@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { FooterContainer, Para } from './Footer.styles';
 import Link from '../Link/Link';
 

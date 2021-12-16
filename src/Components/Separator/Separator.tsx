@@ -1,4 +1,3 @@
-import React from 'react';
 import SeparatorStyle from './Separator.styles';
 
 type trol = {

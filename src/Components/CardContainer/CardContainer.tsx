@@ -1,11 +1,9 @@
-import React, { FC } from 'react';
-import { isMobile } from 'react-device-detect';
 import TiltContainer from './CardContainer.styles';
 import useReducedMotion from '../../Hooks/useReducedMotion';
 
 import { TCardContainer } from '../../Types/types';
 
-const CardTilt: FC<TCardContainer> = ({ children, bg, border }) => {
+const CardTilt = ({ children, bg, border }: TCardContainer) => {
   const usesReducedMotion = useReducedMotion();
   let tiltY = 0;
   let tiltX = 0;

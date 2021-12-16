@@ -5,13 +5,13 @@ import LeafletStyles from './Leaflet.styles';
 const GlobalStyle = createGlobalStyle`
     html{
         scroll-behavior: smooth;
-        scroll-padding-top: 8em;
+        scroll-padding: 5em;
     }
     *, *::before, *::after{
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        cursor: none;
+        // cursor: none;
         @media (prefers-reduced-motion) {
             cursor: auto;
         }
@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         min-height: -webkit-fill-available;
         font-family: 'Roboto Slab', serif;
+        
     }
     ${SwiperStyles};
     ${ScrollBar}

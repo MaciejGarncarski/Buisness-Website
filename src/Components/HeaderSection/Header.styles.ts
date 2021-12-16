@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
   width: 100%;
-  height: 88vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 0 1em;
+  padding-bottom: 2em;
   row-gap: 8em;
   position: relative;
   overflow-y: hidden;
@@ -39,10 +40,10 @@ const Description = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-
+  padding: 0 1em;
+  text-align: center;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     padding: 0 12em;
-    text-align: center;
   }
 `;
 
