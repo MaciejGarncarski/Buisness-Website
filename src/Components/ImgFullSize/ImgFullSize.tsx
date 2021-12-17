@@ -6,4 +6,18 @@ const ImgFullSize = styled(motion.img)`
   height: 100%;
 `;
 
-export default ImgFullSize;
+type TImage = {
+  src: string;
+  alt: string;
+  className?: string;
+  variants?: {
+    visible: object;
+    hidden: object;
+  };
+};
+
+const Img = ({ src, alt, className, variants }: TImage) => {
+  return <ImgFullSize src={src} alt={alt} className={className} variants={variants} />;
+};
+
+export { Img };

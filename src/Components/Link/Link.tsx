@@ -1,4 +1,4 @@
-import Anchor from './Link.styles';
+import { Anchor } from './Link.styles';
 import { useCursorContext } from '../../Contexts/CursorContext';
 import { TLink } from '../../Types/types';
 
@@ -17,4 +17,4 @@ const Link = ({ href, target, rel, children }: TLink) => {
   );
 };
 
-export default Link;
+export { Link };

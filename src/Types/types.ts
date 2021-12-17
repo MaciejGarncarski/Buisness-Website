@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export type TypeId = {
-  id: string;
+  id?: string;
 };
 
 export type TIdOffset = TypeId & {
@@ -20,9 +20,12 @@ export type TCard = {
 };
 
 export type TCardContainer = {
-  children: React.ReactNode;
   bg: string;
   border: string;
+  label: string;
+  heading: string;
+  icon: ReactNode;
+  description: string;
 };
 
 export type TLink = {

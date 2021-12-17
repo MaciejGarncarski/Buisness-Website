@@ -1,4 +1,10 @@
-import { CardContainer, Label, Heading, IconContainer, CardDescription } from './Card.styles';
+import {
+  CardContainer,
+  Label,
+  Heading,
+  IconContainer,
+  CardDescription,
+} from './CardContent.styles';
 
 import { TCard } from '../../Types/types';
 
@@ -13,4 +19,4 @@ const Card = ({ label, heading, description, icon }: TCard) => {
   );
 };
 
-export default Card;
+export { Card };

@@ -7,8 +7,8 @@ const NavContainer = styled.nav<{ isSticked: boolean }>`
   flex-direction: column;
   align-items: center;
   background: ${({ theme }) => theme.darkYellow};
-  border-top: 1px solid ${({ theme }) => theme.blue};
-  border-bottom: 1px solid ${({ theme }) => theme.blue};
+  border-top: 1px solid ${({ theme }) => theme.green};
+  border-bottom: 1px solid ${({ theme }) => theme.green};
   position: ${({ isSticked }) => (isSticked ? 'fixed' : 'absolute')};
   left: 0;
   z-index: 1001;
@@ -49,13 +49,12 @@ const LinkAnchor = styled.a`
   width: 100%;
   height: 100%;
   transition: all ease-in-out 200ms;
-  transition-property: outline, transform, color;
+  transition-property: box-shadow, color;
   &:hover,
   :focus {
-    transform: scale(1.15);
-    outline: 2px solid ${({ theme }) => theme.blue};
+    box-shadow: 0em 0em transparent;
+    outline: 2px solid ${({ theme }) => theme.black};
     outline-offset: -2px;
-    color: ${({ theme }) => theme.blue};
     border-color: transparent;
   }
   & > svg {

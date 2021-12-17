@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FooterContainer, Para } from './Footer.styles';
-import Link from '../Link/Link';
+import { Link } from '../Link/Link';
 
 const Footer = function () {
   const [year, setYear] = useState(2021);
@@ -19,4 +19,4 @@ const Footer = function () {
   );
 };
 
-export default Footer;
+export { Footer };

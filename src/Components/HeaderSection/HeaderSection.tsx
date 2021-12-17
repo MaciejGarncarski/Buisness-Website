@@ -1,7 +1,7 @@
 import { isMobile } from 'react-device-detect';
 import { HeaderContainer, H1, Description } from './Header.styles';
 import { Triangle, Rectangle, Circle } from '../Shapes/Shapes';
-import useReducedMotion from '../../Hooks/useReducedMotion';
+import { useReducedMotion } from '../../Hooks/useReducedMotion';
 import { heading, description } from './Header.data';
 import { TIdOffset } from '../../Types/types';
 
@@ -30,4 +30,4 @@ const HeaderSection = ({ id, offsetY }: TIdOffset) => {
   );
 };
 
-export default HeaderSection;
+export { HeaderSection };

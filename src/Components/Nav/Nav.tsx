@@ -1,9 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
-import { AiOutlineHome, AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
-import { debounce } from 'lodash';
+import { AiOutlineHome, AiOutlineUser, AiOutlinePhone, AiOutlineCamera } from 'react-icons/ai';
 import { NavContainer, List, ListLink as ListLinkStyle, LinkAnchor } from './Nav.styles';
 import { useCursorContext } from '../../Contexts/CursorContext';
-
+import { isMobile } from 'react-device-detect';
 import { TChildren, TNav } from '../../Types/types';
 
 const ListLink = ({ children }: TChildren) => {
@@ -27,13 +26,12 @@ const Nav = ({ ids, offsetY }: TNav) => {
       }
     };
     handleResize();
-    window.addEventListener('resize', debounce(handleResize, 500));
-
-    return () => window.removeEventListener('resize', debounce(handleResize, 500));
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-    if (offsetY >= navPosition - 50) {
+    if (offsetY >= navPosition) {
       setIsSticked(true);
     } else {
       setIsSticked(false);
@@ -53,8 +51,16 @@ const Nav = ({ ids, offsetY }: TNav) => {
             <AiOutlineUser />
           </LinkAnchor>
         </ListLink>
+        {!isMobile && (
+          <ListLink>
+            <LinkAnchor href={`#${ids[2]}`} title="Gallery">
+              <AiOutlineCamera />
+            </LinkAnchor>
+          </ListLink>
+        )}
+
         <ListLink>
-          <LinkAnchor href={`#${ids[2]}`} title="Contact">
+          <LinkAnchor href={`#${ids[3]}`} title="Contact">
             <AiOutlinePhone />
           </LinkAnchor>
         </ListLink>
@@ -63,4 +69,4 @@ const Nav = ({ ids, offsetY }: TNav) => {
   );
 };
 
-export default Nav;
+export { Nav };

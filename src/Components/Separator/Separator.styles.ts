@@ -7,4 +7,4 @@ const SeparatorStyle = styled.hr`
   border-bottom: 1px solid ${({ theme }) => theme.black};
 `;
 
-export default SeparatorStyle;
+export { SeparatorStyle };

@@ -24,10 +24,27 @@ const H1 = styled.h1`
   z-index: 1;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 2.4em;
+  padding: 0 0.5em;
+  margin-top: 2em;
+  line-height: 1.2;
   text-align: center;
+  position: relative;
+  &::before {
+    content: '';
+    display: none;
+  }
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
-    padding-top: 0;
+    margin-top: 0;
+    &::before {
+      left: -5%;
+      bottom: 0;
+      width: 67%;
+      height: 100%;
+      z-index: -1;
+      position: absolute;
+      display: block;
+      background-color: ${({ theme }) => theme.green};
+    }
   }
 `;
 
@@ -36,7 +53,7 @@ const Description = styled.p`
   font-size: 2em;
   z-index: -1;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 7;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;

@@ -21,4 +21,4 @@ const LeafletStyles = css`
   }
 `;
 
-export default LeafletStyles;
+export { LeafletStyles };

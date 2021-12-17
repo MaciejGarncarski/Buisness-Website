@@ -1,9 +1,9 @@
-import TiltContainer from './CardContainer.styles';
-import useReducedMotion from '../../Hooks/useReducedMotion';
-
+import { TiltContainer } from './CardContainer.styles';
+import { useReducedMotion } from '../../Hooks/useReducedMotion';
 import { TCardContainer } from '../../Types/types';
+import { Card } from '../CardContent/CardContent';
 
-const CardTilt = ({ children, bg, border }: TCardContainer) => {
+const CardTilt = ({ bg, border, label, heading, icon, description }: TCardContainer) => {
   const usesReducedMotion = useReducedMotion();
   let tiltY = 0;
   let tiltX = 0;
@@ -19,9 +19,9 @@ const CardTilt = ({ children, bg, border }: TCardContainer) => {
       bg={bg}
       border={border}
     >
-      {children}
+      <Card label={label} heading={heading} icon={icon} description={description} />
     </TiltContainer>
   );
 };
 
-export default CardTilt;
+export { CardTilt };

@@ -1,5 +1,5 @@
 import { TriangleContainer, RectangleContainer, CircleContainer } from './Shape.styles';
-import ImgFullSize from '../ImgFullSize/ImgFullSize';
+import { Img } from '../ImgFullSize/ImgFullSize';
 import triangle from '../../Assets/Header/triangle.svg';
 import circle from '../../Assets/Header/circle.svg';
 import rectangle from '../../Assets/Header/rectangle.svg';
@@ -13,7 +13,7 @@ const Triangle = function ({ multiply }: TMultiply) {
         transform: `translate3d(0, ${multiply + 0.1}px, 0)`,
       }}
     >
-      <ImgFullSize src={triangle} alt="Triangle" />
+      <Img src={triangle} alt="Triangle" />
     </TriangleContainer>
   );
 };
@@ -25,7 +25,7 @@ const Rectangle = function ({ multiply }: TMultiply) {
         transform: `translate3d(0, ${multiply - 0.1}px, 0)`,
       }}
     >
-      <ImgFullSize src={rectangle} alt="Triangle" />
+      <Img src={rectangle} alt="Triangle" />
     </RectangleContainer>
   );
 };
@@ -33,7 +33,7 @@ const Rectangle = function ({ multiply }: TMultiply) {
 const Circle = function ({ multiply }: TMultiply) {
   return (
     <CircleContainer style={{ transform: `translate3d(0, ${multiply}px, 0)` }}>
-      <ImgFullSize src={circle} alt="Triangle" />
+      <Img src={circle} alt="Triangle" />
     </CircleContainer>
   );
 };

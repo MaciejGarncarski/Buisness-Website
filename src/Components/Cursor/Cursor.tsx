@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import useMousePosition from '../../Hooks/useMousePosition';
+import { useMousePosition } from '../../Hooks/useMousePosition';
 import { PrimaryCursor, SecondaryCursor } from './Cursor.styles';
 import { useCursorContext } from '../../Contexts/CursorContext';
 
@@ -81,4 +81,4 @@ const Cursor = function () {
   );
 };
 
-export default Cursor;
+export { Cursor };

@@ -11,7 +11,7 @@ const TiltContainer = styled(Tilt)<IProps>`
   justify-content: center;
   align-items: center;
   width: max(60vw, 18em);
-  height: max(30vh, 30em);
+  height: max(30vh, 60vh);
   transform: translateZ(50px);
   background: ${({ bg, theme }) => theme[bg]};
   border: 4px solid ${({ theme }) => theme.black};
@@ -19,4 +19,4 @@ const TiltContainer = styled(Tilt)<IProps>`
   transform-style: preserve-3d;
 `;
 
-export default TiltContainer;
+export { TiltContainer };

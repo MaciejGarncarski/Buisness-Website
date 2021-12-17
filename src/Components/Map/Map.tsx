@@ -9,10 +9,10 @@ const Map = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={[50.05083, 21.40989]}>
-        <Popup>Siedziba żula</Popup>
+        <Popup>Company location.</Popup>
       </Marker>
     </MapContainer>
   );
 };
 
-export default Map;
+export { Map };

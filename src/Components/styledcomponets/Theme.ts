@@ -10,4 +10,4 @@ const Theme: DefaultTheme = {
   bigScreen: '70em',
 };
 
-export default Theme;
+export { Theme };

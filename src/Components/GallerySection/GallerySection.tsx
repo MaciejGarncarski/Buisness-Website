@@ -1,0 +1,45 @@
+import { Container } from './GallerySection.styles';
+import { TypeId } from '../../Types/types';
+import { Img } from '../ImgFullSize/ImgFullSize';
+import { SectionLabel } from '../SectionLabel/SectionLabel';
+import { data } from './Gallery.data';
+
+const variants = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: 'afterChildren',
+    },
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut',
+    },
+  },
+  hidden: { opacity: 0 },
+};
+
+const GallerySection = ({ id }: TypeId) => {
+  return (
+    <Container id={id} variants={variants} initial="hidden" whileInView="visible">
+      <SectionLabel labelText="Gallery" />
+      {data.map(({ src, id, alt }) => (
+        <Img variants={item} src={src} key={id} alt={alt} className={`img--${id}`} />
+      ))}
+    </Container>
+  );
+};
+
+export { GallerySection };

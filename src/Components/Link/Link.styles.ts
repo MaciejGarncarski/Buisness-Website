@@ -7,4 +7,4 @@ const Anchor = styled.a`
   font-weight: 700;
 `;
 
-export default Anchor;
+export { Anchor };

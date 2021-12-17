@@ -17,4 +17,4 @@ const ScrollBar = css`
   }
 `;
 
-export default ScrollBar;
+export { ScrollBar };

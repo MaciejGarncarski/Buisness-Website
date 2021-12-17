@@ -1,11 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
-import ScrollBar from './Scrollbar.style';
-import SwiperStyles from './Swpier.styles';
-import LeafletStyles from './Leaflet.styles';
+import { ScrollBar } from './Scrollbar.style';
+import { SwiperStyles } from './Swpier.styles';
+import { LeafletStyles } from './Leaflet.styles';
 const GlobalStyle = createGlobalStyle`
     html{
         scroll-behavior: smooth;
         scroll-padding: 5em;
+
     }
     *, *::before, *::after{
         padding: 0;
@@ -28,4 +29,4 @@ const GlobalStyle = createGlobalStyle`
     ${LeafletStyles};
 `;
 
-export default GlobalStyle;
+export { GlobalStyle };

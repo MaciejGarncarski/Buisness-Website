@@ -17,4 +17,4 @@ const useReducedMotion = () => {
   return usesReducedMotion;
 };
 
-export default useReducedMotion;
+export { useReducedMotion };

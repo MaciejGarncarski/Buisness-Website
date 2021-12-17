@@ -53,9 +53,9 @@ const Container = styled(motion.ul)`
 
     &::after {
       display: block;
-      width: 14vw;
-      height: 14vw;
-      right: 1vw;
+      width: 13.5vw;
+      height: 13.5vw;
+      right: -0.5vw;
       bottom: 3vh;
       background: url('${square}');
       ${bgSizeRepeat};
@@ -84,7 +84,7 @@ const ContactLink = styled.a`
   }
   &:hover,
   &:focus {
-    transform: scale(1.1);
+    transform: scale(1.12);
   }
   & > svg {
     font-size: 1.5em;

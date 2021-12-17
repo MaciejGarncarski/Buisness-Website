@@ -1,11 +1,7 @@
-import SeparatorStyle from './Separator.styles';
-
-type trol = {
-  isVertical: boolean;
-};
+import { SeparatorStyle } from './Separator.styles';
 
 function Separator() {
   return <SeparatorStyle />;
 }
 
-export default Separator;
+export { Separator };

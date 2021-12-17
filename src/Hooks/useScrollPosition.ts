@@ -19,4 +19,4 @@ const useScrollPosition = () => {
   return offsetY;
 };
 
-export default useScrollPosition;
+export { useScrollPosition };

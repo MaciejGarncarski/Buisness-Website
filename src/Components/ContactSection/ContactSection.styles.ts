@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -10,12 +10,15 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 0.5em;
+  position: relative;
+
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3em;
-    padding: 10em 2em;
+    padding: 8em 2em;
   }
+
   & > div:last-child {
     & a {
       cursor: pointer;
@@ -28,4 +31,4 @@ const Container = styled.div`
   }
 `;
 
-export default Container;
+export { Container };

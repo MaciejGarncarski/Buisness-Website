@@ -19,4 +19,4 @@ const SwiperStyles = css`
   }
 `;
 
-export default SwiperStyles;
+export { SwiperStyles };
