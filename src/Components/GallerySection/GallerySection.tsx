@@ -6,7 +6,7 @@ import { data } from './Gallery.data';
 
 const variants = {
   hidden: {
-    opacity: 0,
+    blur: 1,
     transition: {
       when: 'afterChildren',
     },
@@ -14,6 +14,7 @@ const variants = {
   visible: {
     opacity: 1,
     transition: {
+      delay: 0.75,
       when: 'beforeChildren',
       staggerChildren: 0.2,
     },
@@ -24,8 +25,7 @@ const item = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
+      duration: 0.75,
     },
   },
   hidden: { opacity: 0 },

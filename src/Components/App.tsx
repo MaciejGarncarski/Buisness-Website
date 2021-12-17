@@ -1,6 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from './styledcomponets/GlobalStyle';
-import { Theme } from './styledcomponets/Theme';
+import { GlobalStyle } from './StyledComponents/GlobalStyle';
+import { Theme } from './StyledComponents/Theme';
 import { CursorProvider } from '../Contexts/CursorContext';
 import { isMobile } from 'react-device-detect';
 import { useReducedMotion } from '../Hooks/useReducedMotion';

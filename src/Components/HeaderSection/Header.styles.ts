@@ -53,7 +53,7 @@ const Description = styled.p`
   font-size: 2em;
   z-index: -1;
   display: -webkit-box;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 6;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
