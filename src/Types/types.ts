@@ -1,48 +1,65 @@
 import { ReactNode } from 'react';
 
-export type TypeId = {
+export type Anchor = {
   id?: string;
 };
 
-export type TIdOffset = TypeId & {
-  offsetY: number;
+export type AnchorArray = {
+  ids: ['', 'about', 'gallery', 'contact'];
 };
 
-export type TIdArray = {
-  ids: string[];
-};
-
-export type TCard = {
+export type Card = {
   label: string;
   heading: string;
   description: string;
-  icon: React.ReactNode;
+  Icon: ReactNode;
 };
 
-export type TCardContainer = {
+export type CardContainer = Card & {
   bg: string;
   border: string;
-  label: string;
-  heading: string;
-  icon: ReactNode;
-  description: string;
 };
 
-export type TLink = {
-  children: React.ReactNode;
+export type Link = {
+  children: ReactNode;
   href: string;
   target: string;
   rel: string;
 };
 
-export type TMultiply = {
+export type Multiply = {
   multiply: number;
 };
 
-export type TNav = TIdArray & {
+export type Nav = AnchorArray & {
   offsetY: number;
 };
 
-export type TChildren = {
+export type Children = {
   children: ReactNode;
+};
+
+export type Label = {
+  labelText: string;
+};
+
+export type Image = {
+  src: string;
+  alt: string;
+  className?: string;
+  variants?: {
+    visible: object;
+    hidden: object;
+  };
+};
+
+export type ListItem = {
+  children: ReactNode;
+};
+
+export type ContactLink = {
+  href: string;
+  title: string;
+  label: string;
+  icon: ReactNode;
 };

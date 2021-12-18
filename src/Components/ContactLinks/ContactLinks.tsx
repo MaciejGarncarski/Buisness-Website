@@ -2,7 +2,7 @@ import { AiOutlinePhone, AiOutlineMail, AiOutlineClockCircle } from 'react-icons
 import { useCursorContext } from '../../Contexts/CursorContext';
 import { Container, ContactLink as ContactLinkStyle } from './ContactLinks.styles';
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ListItem as ListItemTypes, ContactLink as ContactLinkTypes } from '../../Types/types';
 
 const variants = {
   visible: {
@@ -32,22 +32,11 @@ const item = {
   hidden: { rotate: 5, opacity: 0 },
 };
 
-type TListItem = {
-  children: ReactNode;
-};
-
-const ListItem = ({ children }: TListItem) => {
+const ListItem = ({ children }: ListItemTypes) => {
   return <motion.li variants={item}>{children}</motion.li>;
 };
 
-type TContactLink = {
-  href: string;
-  title: string;
-  label: string;
-  icon: ReactNode;
-};
-
-const ContactLink = ({ href, title, label, icon }: TContactLink) => {
+const ContactLink = ({ href, title, label, icon }: ContactLinkTypes) => {
   const { setIsActive } = useCursorContext();
   return (
     <ContactLinkStyle

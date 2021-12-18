@@ -1,12 +1,12 @@
 import { Container } from './GallerySection.styles';
-import { TypeId } from '../../Types/types';
-import { Img } from '../ImgFullSize/ImgFullSize';
+import { Anchor } from '../../Types/types';
+import { ImgFullSize } from '../ImgFill/ImgFill';
 import { SectionHeading } from '../SectionHeading/SectionHeading';
 import { data } from './Gallery.data';
 
 const variants = {
   hidden: {
-    blur: 1,
+    opacity: 0,
     transition: {
       when: 'afterChildren',
     },
@@ -14,7 +14,7 @@ const variants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 0.75,
+      delay: 0.5,
       when: 'beforeChildren',
       staggerChildren: 0.2,
     },
@@ -24,19 +24,20 @@ const variants = {
 const item = {
   visible: {
     opacity: 1,
+    x: 0,
     transition: {
-      duration: 0.75,
+      duration: 0.5,
     },
   },
-  hidden: { opacity: 0 },
+  hidden: { x: 20, opacity: 0 },
 };
 
-const GallerySection = ({ id }: TypeId) => {
+const GallerySection = ({ id }: Anchor) => {
   return (
     <Container id={id} variants={variants} initial="hidden" whileInView="visible">
       <SectionHeading labelText="Gallery" />
       {data.map(({ src, id, alt }) => (
-        <Img variants={item} src={src} key={id} alt={alt} className={`img--${id}`} />
+        <ImgFullSize variants={item} src={src} key={id} alt={alt} className={`img--${id}`} />
       ))}
     </Container>
   );

@@ -1,13 +1,13 @@
 import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from './StyledComponents/GlobalStyle';
-import { Theme } from './StyledComponents/Theme';
+import { GlobalStyle } from '../StyledComponents/GlobalStyle';
+import { Theme } from '../StyledComponents/Theme';
 import { CursorProvider } from '../Contexts/CursorContext';
 import { isMobile } from 'react-device-detect';
 import { useReducedMotion } from '../Hooks/useReducedMotion';
 import { useScrollPosition } from '../Hooks/useScrollPosition';
 import loadable from '@loadable/component';
-import { AboutSection } from './AboutSection/AboutSection';
 import { ContactSection } from './ContactSection/ContactSection';
+import { CardSection } from './CardSection/CardSection';
 
 const Cursor = loadable(async () => {
   const { Cursor } = await import('./Cursor/Cursor');
@@ -61,7 +61,7 @@ const App = function () {
         <Container>
           <HeaderSection offsetY={offsetY} />
           <Nav ids={anchor} offsetY={offsetY} />
-          <AboutSection id={anchor[1]} />
+          <CardSection id={anchor[1]} />
           <Separator />
           {!isMobile && <GallerySection id={anchor[2]} />}
           {!isMobile && <Separator />}

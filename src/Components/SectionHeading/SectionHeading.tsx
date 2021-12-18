@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { Label } from '../../Types/types';
 
-const Label = styled(motion.h2)`
+const Heading = styled(motion.h2)`
   position: absolute;
   top: 2em;
   left: 3em;
@@ -26,10 +27,6 @@ const Label = styled(motion.h2)`
   }
 `;
 
-type TLabel = {
-  labelText: string;
-};
-
 const variant = {
   hidden: { x: -20, opacity: 0 },
   visible: {
@@ -42,11 +39,11 @@ const variant = {
   },
 };
 
-const SectionHeading = ({ labelText }: TLabel) => {
+const SectionHeading = ({ labelText }: Label) => {
   return (
-    <Label variants={variant} initial="hidden" whileInView="visible">
+    <Heading variants={variant} initial="hidden" whileInView="visible">
       {labelText}.
-    </Label>
+    </Heading>
   );
 };
 

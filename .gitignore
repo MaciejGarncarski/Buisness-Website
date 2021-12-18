@@ -4,3 +4,5 @@ dist
 dist-ssr
 *.local
 yarn-error.log
+src/components/__mocks__
+src/components/__tests__

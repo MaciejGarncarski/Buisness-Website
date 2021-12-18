@@ -17,6 +17,7 @@ const PrimaryCursor = styled.div`
   &.clicked {
     background-color: ${({ theme }) => theme.black};
   }
+
   z-index: 1003;
 `;
 

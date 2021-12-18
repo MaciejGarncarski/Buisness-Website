@@ -1,4 +1,24 @@
+import Tilt from 'react-parallax-tilt';
 import styled, { css } from 'styled-components';
+import Triangle from '../../Assets/Header/circle.svg';
+
+interface Props {
+  bg: string;
+  border: string;
+}
+
+const TiltContainer = styled(Tilt)<Props>`
+  width: max(60vw, 18em);
+  height: max(30vh, 60vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(50px);
+  transform-style: preserve-3d;
+  background: ${({ bg, theme }) => theme[bg]};
+  border: 4px solid ${({ theme }) => theme.black};
+  box-shadow: -1em 1em ${({ border, theme }) => theme[border]};
+`;
 
 const CardContainer = styled.article`
   width: 100%;
@@ -7,7 +27,7 @@ const CardContainer = styled.article`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transform: translateZ(90px) scale(0.8);
+  transform: translateZ(130px) scale(0.73);
   gap: 1em;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     display: grid;
@@ -27,10 +47,10 @@ const IconContainer = styled.div`
 `;
 
 const CardDescription = styled.p`
+  padding: 0 0.5em;
   color: ${({ theme }) => theme.black};
   font-size: 2em;
   text-align: center;
-  padding: 0 0.5em;
 `;
 
 const H3 = css`
@@ -52,4 +72,4 @@ const Label = styled.h3`
   right: 0;
 `;
 
-export { CardContainer, Heading, Label, IconContainer, CardDescription };
+export { TiltContainer, CardContainer, Heading, Label, IconContainer, CardDescription };
