@@ -1,7 +1,7 @@
 import { Container } from './GallerySection.styles';
 import { TypeId } from '../../Types/types';
 import { Img } from '../ImgFullSize/ImgFullSize';
-import { SectionLabel } from '../SectionLabel/SectionLabel';
+import { SectionHeading } from '../SectionHeading/SectionHeading';
 import { data } from './Gallery.data';
 
 const variants = {
@@ -34,7 +34,7 @@ const item = {
 const GallerySection = ({ id }: TypeId) => {
   return (
     <Container id={id} variants={variants} initial="hidden" whileInView="visible">
-      <SectionLabel labelText="Gallery" />
+      <SectionHeading labelText="Gallery" />
       {data.map(({ src, id, alt }) => (
         <Img variants={item} src={src} key={id} alt={alt} className={`img--${id}`} />
       ))}

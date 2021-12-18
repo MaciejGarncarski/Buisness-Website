@@ -5,18 +5,17 @@ import { CardTilt } from '../CardContainer/CardContainer';
 import { TypeId } from '../../Types/types';
 import { data } from './Cards.data';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { SectionLabel } from '../SectionLabel/SectionLabel';
-SwiperCore.use([Navigation]);
+import { Navigation } from 'swiper';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import { SectionHeading } from '../SectionHeading/SectionHeading';
 
 const AboutSection = function ({ id }: TypeId) {
   const usesReducedMotion = useReducedMotion();
   let sliderSpeed = 0;
   const checkSliderSpeed = () => {
     if (!usesReducedMotion) {
-      sliderSpeed = 600;
+      sliderSpeed = 500;
     }
   };
   checkSliderSpeed();
@@ -36,8 +35,8 @@ const AboutSection = function ({ id }: TypeId) {
 
   return (
     <Container id={id} variants={variants} initial="hidden" whileInView="visible">
-      <SectionLabel labelText="About us" />
-      <Swiper navigation speed={sliderSpeed}>
+      <SectionHeading labelText="About us" />
+      <Swiper navigation modules={[Navigation]} speed={sliderSpeed}>
         <SwiperSlide>
           <CardTilt
             bg="green"

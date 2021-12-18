@@ -42,10 +42,12 @@ const variant = {
   },
 };
 
-export const SectionLabel = ({ labelText }: TLabel) => {
+const SectionHeading = ({ labelText }: TLabel) => {
   return (
     <Label variants={variant} initial="hidden" whileInView="visible">
       {labelText}.
     </Label>
   );
 };
+
+export { SectionHeading };
