@@ -1,5 +1,5 @@
 
-# Business website
+## Overview 🎉
 A website that represents some not existing company. Made for learning purposes :smile:.
 
 ## Tech/framework used 🔧
