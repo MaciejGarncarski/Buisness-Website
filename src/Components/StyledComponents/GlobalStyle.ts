@@ -5,8 +5,10 @@ import { LeafletStyles } from './Leaflet.styles';
 const GlobalStyle = createGlobalStyle`
     html{
         scroll-behavior: smooth;
-        scroll-padding: 5em;
-
+        scroll-padding: 3em;
+        @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+                scroll-padding: 5em;
+        }
     }
     *, *::before, *::after{
         padding: 0;

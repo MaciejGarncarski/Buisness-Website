@@ -6,6 +6,8 @@ import { isMobile } from 'react-device-detect';
 import { useReducedMotion } from '../Hooks/useReducedMotion';
 import { useScrollPosition } from '../Hooks/useScrollPosition';
 import loadable from '@loadable/component';
+import { AboutSection } from './AboutSection/AboutSection';
+import { ContactSection } from './ContactSection/ContactSection';
 
 const Cursor = loadable(async () => {
   const { Cursor } = await import('./Cursor/Cursor');
@@ -27,19 +29,9 @@ const Separator = loadable(async () => {
   return Separator;
 });
 
-const AboutSection = loadable(async () => {
-  const { AboutSection } = await import('./AboutSection/AboutSection');
-  return AboutSection;
-});
-
 const GallerySection = loadable(async () => {
   const { GallerySection } = await import('./GallerySection/GallerySection');
   return GallerySection;
-});
-
-const ContactSection = loadable(async () => {
-  const { ContactSection } = await import('./ContactSection/ContactSection');
-  return ContactSection;
 });
 
 const Footer = loadable(async () => {
@@ -56,7 +48,7 @@ const Container = styled.div`
   font-size: clamp(0.9rem, 2vw, 1.1rem);
 `;
 
-const linkIDs = ['', 'about', 'gallery', 'contact'];
+const anchor = ['', 'about', 'gallery', 'contact'];
 
 const App = function () {
   const offsetY = useScrollPosition();
@@ -68,12 +60,12 @@ const App = function () {
         {!isMobile && !usesReducedMotion && <Cursor />}
         <Container>
           <HeaderSection offsetY={offsetY} />
-          <Nav ids={linkIDs} offsetY={offsetY} />
-          <AboutSection id={linkIDs[1]} />
+          <Nav ids={anchor} offsetY={offsetY} />
+          <AboutSection id={anchor[1]} />
           <Separator />
-          {!isMobile && <GallerySection id={linkIDs[2]} />}
+          {!isMobile && <GallerySection id={anchor[2]} />}
           {!isMobile && <Separator />}
-          <ContactSection id={linkIDs[3]} />
+          <ContactSection id={anchor[3]} />
           <Footer />
         </Container>
       </ThemeProvider>

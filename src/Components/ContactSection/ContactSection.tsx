@@ -1,9 +1,13 @@
 import { Container } from './ContactSection.styles';
-import loadable from '@loadable/component';
 import { Map } from '../Map/Map';
-import { ContactLinks } from '../ContactLinks/ContactLinks';
 import { SectionLabel } from '../SectionLabel/SectionLabel';
 import { TypeId } from '../../Types/types';
+import loadable from '@loadable/component';
+
+const ContactLinks = loadable(async () => {
+  const { ContactLinks } = await import('../ContactLinks/ContactLinks');
+  return ContactLinks;
+});
 
 const ContactSection = ({ id }: TypeId) => {
   return (

@@ -23,7 +23,6 @@ const AboutSection = function ({ id }: TypeId) {
 
   const variants = {
     visible: {
-      x: 0,
       opacity: 1,
       transition: {
         duration: 1.5,
@@ -31,7 +30,6 @@ const AboutSection = function ({ id }: TypeId) {
       },
     },
     hidden: {
-      x: -100,
       opacity: 0,
     },
   };

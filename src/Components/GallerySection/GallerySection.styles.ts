@@ -9,7 +9,7 @@ const Container = styled(motion.section)`
   column-count: 4;
 
   & > img {
-    margin: 0 0 0.75em;
+    margin-top: 0.5em;
     height: auto;
   }
 `;

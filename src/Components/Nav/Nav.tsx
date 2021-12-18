@@ -26,12 +26,10 @@ const Nav = ({ ids, offsetY }: TNav) => {
       }
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-    if (offsetY >= navPosition) {
+    if (offsetY >= navPosition - 10) {
       setIsSticked(true);
     } else {
       setIsSticked(false);
