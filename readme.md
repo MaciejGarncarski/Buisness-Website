@@ -14,10 +14,14 @@ A website that represents some company. Made for learning purposes :smile:.
 ## Instalation & running 💾
 
 ### Install node dependencies
-```yarn install```
+```
+yarn install
+```
 
 ### Start dev server
-```yarn dev```
+```
+yarn dev
+```
 
 ---
 ## Screenshots 📺
