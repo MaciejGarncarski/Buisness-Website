@@ -1,8 +1,8 @@
-import { AiOutlinePhone, AiOutlineMail, AiOutlineClockCircle } from 'react-icons/ai';
 import { useCursorContext } from '../../Contexts/CursorContext';
 import { Container, ContactLink as ContactLinkStyle } from './ContactLinks.styles';
 import { motion } from 'framer-motion';
 import { ListItem as ListItemTypes, ContactLink as ContactLinkTypes } from '../../Types/types';
+import { data } from './ContactLinks.data';
 
 const variants = {
   visible: {
@@ -54,30 +54,13 @@ const ContactLink = ({ href, title, label, icon }: ContactLinkTypes) => {
 const ContactLinks = () => {
   return (
     <Container variants={variants} initial="hidden" whileInView="visible">
-      <ListItem>
-        <ContactLink
-          href="tel:+48000000000"
-          title="Phone number"
-          label="+48-000-000-000"
-          icon={<AiOutlinePhone />}
-        />
-      </ListItem>
-      <ListItem>
-        <ContactLink
-          href="mailto:contactemail@email.com"
-          title="Business email"
-          label="contactemail@email.com"
-          icon={<AiOutlineMail />}
-        />
-      </ListItem>
-      <ListItem>
-        <ContactLink
-          href="#contact"
-          title="We are open"
-          label="Monday - Friday : 8:00-16:00"
-          icon={<AiOutlineClockCircle />}
-        />
-      </ListItem>
+      {data.map(({ href, title, label, Icon }) => {
+        return (
+          <ListItem key={title}>
+            <ContactLink href={href} title={title} label={label} icon={<Icon />} />
+          </ListItem>
+        );
+      })}
     </Container>
   );
 };

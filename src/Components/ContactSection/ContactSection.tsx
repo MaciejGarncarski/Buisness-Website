@@ -1,7 +1,7 @@
 import { Container } from './ContactSection.styles';
 import { Map } from '../Map/Map';
 import { SectionHeading } from '../SectionHeading/SectionHeading';
-import { TypeId } from '../../Types/types';
+import { Anchor } from '../../Types/types';
 import loadable from '@loadable/component';
 
 const ContactLinks = loadable(async () => {
@@ -9,7 +9,7 @@ const ContactLinks = loadable(async () => {
   return ContactLinks;
 });
 
-const ContactSection = ({ id }: TypeId) => {
+const ContactSection = ({ id }: Anchor) => {
   return (
     <Container id={id}>
       <SectionHeading labelText="contact me" />
