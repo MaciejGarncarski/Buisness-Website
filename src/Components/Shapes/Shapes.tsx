@@ -1,5 +1,5 @@
 import { TriangleContainer, RectangleContainer, CircleContainer } from './Shape.styles';
-import { ImgFill } from '../ImgFill/ImgFill';
+import { ImgFill } from '../ImgFill/ImgFill.styles';
 import triangle from '../../Assets/Header/triangle.svg';
 import circle from '../../Assets/Header/circle.svg';
 import rectangle from '../../Assets/Header/rectangle.svg';

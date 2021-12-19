@@ -1,6 +1,6 @@
 import { Container } from './GallerySection.styles';
 import { Anchor } from '../../Types/types';
-import { ImgFill } from '../ImgFill/ImgFill';
+import { ImgFill } from '../ImgFill/ImgFill.styles';
 import { SectionHeading } from '../SectionHeading/SectionHeading';
 import { data } from './Gallery.data';
 
