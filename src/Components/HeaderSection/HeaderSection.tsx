@@ -1,11 +1,13 @@
 import { isMobile } from 'react-device-detect';
 import { HeaderContainer, H1, Description } from './Header.styles';
 import { Triangle, Rectangle, Circle } from '../Shapes/Shapes';
-import { useReducedMotion } from '../../Hooks/useReducedMotion';
+import { useReducedMotion } from 'framer-motion';
 import { heading, description } from './Header.data';
-import { TIdOffset } from '../../Types/types';
+import { Offset, Anchor } from '../../Types/types';
 
-const HeaderSection = ({ id, offsetY }: TIdOffset) => {
+type HeaderSection = Offset & Anchor;
+
+const HeaderSection = ({ id, offsetY }: HeaderSection) => {
   const usesReducedMotion = useReducedMotion();
 
   let multiply = 0;

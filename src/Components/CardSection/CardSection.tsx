@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import { useReducedMotion } from '../../Hooks/useReducedMotion';
+import { useReducedMotion } from 'framer-motion';
 import { Anchor } from '../../Types/types';
 import { data } from './Cards.data';
 

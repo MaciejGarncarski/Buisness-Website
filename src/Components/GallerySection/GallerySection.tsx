@@ -1,6 +1,6 @@
 import { Container } from './GallerySection.styles';
 import { Anchor } from '../../Types/types';
-import { ImgFullSize } from '../ImgFill/ImgFill';
+import { ImgFill } from '../ImgFill/ImgFill';
 import { SectionHeading } from '../SectionHeading/SectionHeading';
 import { data } from './Gallery.data';
 
@@ -37,7 +37,7 @@ const GallerySection = ({ id }: Anchor) => {
     <Container id={id} variants={variants} initial="hidden" whileInView="visible">
       <SectionHeading labelText="Gallery" />
       {data.map(({ src, id, alt }) => (
-        <ImgFullSize variants={item} src={src} key={id} alt={alt} className={`img--${id}`} />
+        <ImgFill variants={item} src={src} key={id} alt={alt} className={`img--${id}`} />
       ))}
     </Container>
   );

@@ -3,7 +3,7 @@ import { GlobalStyle } from '../StyledComponents/GlobalStyle';
 import { Theme } from '../StyledComponents/Theme';
 import { CursorProvider } from '../Contexts/CursorContext';
 import { isMobile } from 'react-device-detect';
-import { useReducedMotion } from '../Hooks/useReducedMotion';
+import { useReducedMotion } from 'framer-motion';
 import { useScrollPosition } from '../Hooks/useScrollPosition';
 import loadable from '@loadable/component';
 import { ContactSection } from './ContactSection/ContactSection';
@@ -63,8 +63,8 @@ const App = function () {
           <Nav ids={anchor} offsetY={offsetY} />
           <CardSection id={anchor[1]} />
           <Separator />
-          {!isMobile && <GallerySection id={anchor[2]} />}
-          {!isMobile && <Separator />}
+          <GallerySection id={anchor[2]} />
+          <Separator />
           <ContactSection id={anchor[3]} />
           <Footer />
         </Container>

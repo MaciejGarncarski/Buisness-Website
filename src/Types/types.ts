@@ -5,7 +5,7 @@ export type Anchor = {
 };
 
 export type AnchorArray = {
-  ids: ['', 'about', 'gallery', 'contact'];
+  ids: string[];
 };
 
 export type Card = {
@@ -31,9 +31,11 @@ export type Multiply = {
   multiply: number;
 };
 
-export type Nav = AnchorArray & {
+export type Offset = {
   offsetY: number;
 };
+
+export type Nav = AnchorArray & Offset;
 
 export type Children = {
   children: ReactNode;
@@ -43,23 +45,16 @@ export type Label = {
   labelText: string;
 };
 
-export type Image = {
-  src: string;
-  alt: string;
-  className?: string;
-  variants?: {
-    visible: object;
-    hidden: object;
-  };
-};
-
 export type ListItem = {
   children: ReactNode;
 };
 
-export type ContactLink = {
+export type NavLink = {
   href: string;
   title: string;
+};
+
+export type ContactLink = NavLink & {
   label: string;
   icon: ReactNode;
 };
