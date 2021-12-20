@@ -15,11 +15,14 @@ const LinkAnchor = styled.a`
   box-shadow: -0.25em 0.25em ${({ theme }) => theme.blue};
   text-decoration: none;
   display: block;
-  padding: 0.4em 1.65em;
+  padding: 0.4em 1.4em;
   width: 100%;
   height: 100%;
   transition: all ease-in-out 200ms;
   transition-property: box-shadow, color;
+  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+    padding: 0.45em 1.75em;
+  }
   &:hover,
   :focus {
     box-shadow: 0em 0em transparent;

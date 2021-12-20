@@ -20,4 +20,5 @@ const data = [
     Icon: AiOutlineClockCircle,
   },
 ];
+
 export { data };

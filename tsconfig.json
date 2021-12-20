@@ -16,5 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["./src", "src/Typings/styled.d.ts"]
+  "include": ["./src", "typings/styled.d.ts"]
 }
+

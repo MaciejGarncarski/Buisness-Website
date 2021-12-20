@@ -1,5 +1,5 @@
 import { useState, createContext, useContext } from 'react';
-import { TChildren } from '../Types/types';
+import { TChildren } from '../types/types';
 
 const CursorHoverContext = createContext<CursorContextData | false>(false);
 

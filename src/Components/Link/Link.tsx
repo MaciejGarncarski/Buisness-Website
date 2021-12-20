@@ -1,6 +1,6 @@
 import { Anchor } from './Link.styles';
-import { useCursorContext } from '../../Contexts/CursorContext';
-import { Link as LinkProps } from '../../Types/types';
+import { useCursorContext } from '../../contexts/CursorContext';
+import { Link as LinkProps } from '../../types/types';
 
 const Link = ({ href, target, rel, children }: LinkProps) => {
   const { setIsActive } = useCursorContext();

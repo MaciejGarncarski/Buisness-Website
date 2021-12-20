@@ -12,7 +12,7 @@ const Container = styled(motion.section)`
   }
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     column-gap: 0.75em;
-    padding: 9em 9em;
+    padding: 12em 9em 6em 9em;
     column-count: 4;
     & > img {
       margin-top: 0.7em;

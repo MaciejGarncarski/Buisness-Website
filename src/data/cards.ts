@@ -19,6 +19,6 @@ export const data = [
     border: 'blue',
     label: '3',
     heading: 'CO-OP',
-    description: 'We are opened to cooperation with other companies. Just call us.',
+    description: 'We are opened to cooperate with others. Just contact us. ',
   },
 ];

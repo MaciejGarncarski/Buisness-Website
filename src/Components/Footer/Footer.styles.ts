@@ -9,8 +9,8 @@ const FooterContainer = styled.footer`
   padding: 1.5em;
 `;
 
-const Para = styled.p`
+const Author = styled.p`
   color: ${({ theme }) => theme.black};
 `;
 
-export { FooterContainer, Para };
+export { FooterContainer, Author };

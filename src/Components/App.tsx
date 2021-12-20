@@ -1,22 +1,22 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../StyledComponents/GlobalStyle';
 import { Theme } from '../StyledComponents/Theme';
-import { CursorProvider } from '../Contexts/CursorContext';
+import { CursorProvider } from '../contexts/CursorContext';
 import { isMobile } from 'react-device-detect';
 import { useReducedMotion } from 'framer-motion';
-import { useScrollPosition } from '../Hooks/useScrollPosition';
+import { useScrollPosition } from '../hooks/useScrollPosition';
 import loadable from '@loadable/component';
-import { ContactSection } from './ContactSection/ContactSection';
-import { CardSection } from './CardSection/CardSection';
+import { Contact } from './Contact/Contact';
+import { About } from './About/About';
 
 const Cursor = loadable(async () => {
   const { Cursor } = await import('./Cursor/Cursor');
   return Cursor;
 });
 
-const HeaderSection = loadable(async () => {
-  const { HeaderSection } = await import('./HeaderSection/HeaderSection');
-  return HeaderSection;
+const Header = loadable(async () => {
+  const { Header } = await import('./Header/Header');
+  return Header;
 });
 
 const Nav = loadable(async () => {
@@ -29,9 +29,9 @@ const Separator = loadable(async () => {
   return Separator;
 });
 
-const GallerySection = loadable(async () => {
-  const { GallerySection } = await import('./GallerySection/GallerySection');
-  return GallerySection;
+const Gallery = loadable(async () => {
+  const { Gallery } = await import('./Gallery/Gallery');
+  return Gallery;
 });
 
 const Footer = loadable(async () => {
@@ -59,13 +59,13 @@ const App = function () {
         <GlobalStyle />
         {!isMobile && !usesReducedMotion && <Cursor />}
         <Container>
-          <HeaderSection offsetY={offsetY} />
+          <Header offsetY={offsetY} />
           <Nav ids={anchor} offsetY={offsetY} />
-          <CardSection id={anchor[1]} />
+          <About id={anchor[1]} />
           <Separator />
-          <GallerySection id={anchor[2]} />
+          <Gallery id={anchor[2]} />
           <Separator />
-          <ContactSection id={anchor[3]} />
+          <Contact id={anchor[3]} />
           <Footer />
         </Container>
       </ThemeProvider>

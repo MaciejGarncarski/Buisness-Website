@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
-import { useMousePosition } from '../../Hooks/useMousePosition';
+import { useMousePosition } from '../../hooks/useMousePosition';
 import { PrimaryCursor, SecondaryCursor } from './Cursor.styles';
-import { useCursorContext } from '../../Contexts/CursorContext';
+import { useCursorContext } from '../../contexts/CursorContext';
 
 const Cursor = function () {
   const { isActive } = useCursorContext();

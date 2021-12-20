@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import { NavContainer, List } from './Nav.styles';
-import { Nav as NavTypes } from '../../Types/types';
-import { data } from './Nav.data';
-import { NavLink } from '../NavLink/NavLink';
+import { Nav as NavTypes } from '../../types/types';
+import { data } from '../../data/nav';
+import { NavLink } from './NavLink/NavLink';
 
 const Nav = ({ ids, offsetY }: NavTypes) => {
   const [isSticked, setIsSticked] = useState(false);

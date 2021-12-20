@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FooterContainer, Para } from './Footer.styles';
+import { FooterContainer, Author } from './Footer.styles';
 import { Link } from '../Link/Link';
 
 const Footer = function () {
@@ -9,7 +9,7 @@ const Footer = function () {
   }, []);
   return (
     <FooterContainer>
-      <Para>
+      <Author>
         <Link
           href="https://github.com/maciejgarncarski"
           target="_blank"
@@ -19,7 +19,7 @@ const Footer = function () {
           &copy; Maciej Garncarski
         </Link>
         , {year}
-      </Para>
+      </Author>
     </FooterContainer>
   );
 };

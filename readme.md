@@ -1,6 +1,8 @@
-
 ## Overview 🎉
 A website that represents some not existing company. Made for learning purposes :smile:.
+
+## Screenshot 📺
+![Website preview](https://github.com/MaciejGarncarski/Buisness-Website/blob/main/website-preview.png?raw=true "Business website")
 
 ## Tech/framework used 🔧
 - React
@@ -21,9 +23,6 @@ yarn install
 ```
 yarn dev
 ```
-
-## Screenshots 📺
-![Website preview](https://github.com/MaciejGarncarski/Buisness-Website/blob/main/website-preview.png?raw=true "Business website")
 
 ## Live 📍
 https://website-business.netlify.app

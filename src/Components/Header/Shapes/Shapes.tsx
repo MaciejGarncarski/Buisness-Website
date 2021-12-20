@@ -1,10 +1,9 @@
 import { TriangleContainer, RectangleContainer, CircleContainer } from './Shape.styles';
-import { ImgFill } from '../ImgFill/ImgFill.styles';
-import triangle from '../../Assets/Header/triangle.svg';
-import circle from '../../Assets/Header/circle.svg';
-import rectangle from '../../Assets/Header/rectangle.svg';
-
-import { Multiply } from '../../Types/types';
+import { ImgFill } from '../../ImgFill/ImgFill.styles';
+import triangle from '../../../assets/images/header/triangle.svg';
+import circle from '../../../assets/images/header/circle.svg';
+import rectangle from '../../../assets/images/header/rectangle.svg';
+import { Multiply } from '../../../types/types';
 
 const Triangle = function ({ multiply }: Multiply) {
   return (
