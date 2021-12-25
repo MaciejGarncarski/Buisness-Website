@@ -55,7 +55,7 @@ const CardDescription = styled.p`
 
 const H3 = css`
   position: absolute;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 700;
   color: ${({ theme }) => theme.black};
 `;

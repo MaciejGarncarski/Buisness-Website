@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { ScrollBar } from './Scrollbar.style';
-import { SwiperStyles } from './Swpier.styles';
-import { LeafletStyles } from './Leaflet.styles';
+import { ScrollBar } from './Scrollbar';
+import { SwiperStyles } from './Swpier';
+import { LeafletStyles } from './Leaflet';
 
 const GlobalStyle = createGlobalStyle`
     *, *::before, *::after{

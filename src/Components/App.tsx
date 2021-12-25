@@ -45,7 +45,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   row-gap: 2em;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
 `;
 
 const anchor = ['', 'about', 'gallery', 'contact'];
