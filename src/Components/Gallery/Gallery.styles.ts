@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Container = styled(motion.section)`
   position: relative;
   column-count: 3;
-  padding: 1em 2em;
+  padding: 7em 2em;
   column-gap: 0.75em;
   & > img {
     margin-top: 0.5em;

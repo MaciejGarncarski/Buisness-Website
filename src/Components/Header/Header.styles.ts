@@ -6,7 +6,7 @@ const HeaderContainer = styled.header`
   position: relative;
   overflow-y: hidden;
   display: flex;
-  row-gap: 10em;
+  row-gap: 16em;
   flex-direction: column;
   padding: 0 1em 2em 1em;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {

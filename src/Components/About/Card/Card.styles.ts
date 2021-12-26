@@ -1,6 +1,5 @@
 import Tilt from 'react-parallax-tilt';
 import styled, { css } from 'styled-components';
-import Triangle from '../../Assets/Header/circle.svg';
 
 interface Props {
   bg: string;
@@ -9,7 +8,7 @@ interface Props {
 
 const TiltContainer = styled(Tilt)<Props>`
   width: max(60vw, 18em);
-  height: max(30vh, 60vh);
+  height: 35em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +17,9 @@ const TiltContainer = styled(Tilt)<Props>`
   background: ${({ bg, theme }) => theme[bg]};
   border: 4px solid ${({ theme }) => theme.black};
   box-shadow: -1em 1em ${({ border, theme }) => theme[border]};
+  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+    height: 60vh;
+  }
 `;
 
 const CardContainer = styled.article`
