@@ -1,5 +1,5 @@
 import { useState, createContext, useContext } from 'react';
-import { TChildren } from '../types/types';
+import { Children } from '../types/types';
 
 const CursorHoverContext = createContext<CursorContextData | false>(false);
 
@@ -8,7 +8,7 @@ const useProviderCursor = () => {
   return { isActive, setIsActive };
 };
 
-const CursorProvider = ({ children }: TChildren) => {
+const CursorProvider = ({ children }: Children) => {
   const value = useProviderCursor();
   return <CursorHoverContext.Provider value={value}>{children}</CursorHoverContext.Provider>;
 };
