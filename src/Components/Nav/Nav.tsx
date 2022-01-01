@@ -19,13 +19,13 @@ const Nav = ({ ids, offsetY }: NavTypes) => {
     setDefaultPos();
     window.addEventListener(
       'resize',
-      debounce(() => setDefaultPos),
+      debounce(() => setDefaultPos, 500),
     );
     return () => window.removeEventListener('resize', setDefaultPos);
   }, []);
 
   useEffect(() => {
-    offsetY >= navPosition - 100 ? setIsSticked(true) : setIsSticked(false);
+    offsetY >= navPosition - 50 ? setIsSticked(true) : setIsSticked(false);
   }, [navPosition, offsetY]);
 
   return (

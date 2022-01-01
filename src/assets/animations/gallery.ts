@@ -19,11 +19,12 @@ const item = {
   visible: {
     opacity: 1,
     x: 0,
+    rotate: 0,
     transition: {
       duration: 0.5,
     },
   },
-  hidden: { x: 20, opacity: 0 },
+  hidden: { x: 20, rotate: 5, opacity: 0 },
 };
 
 export { variants, item };

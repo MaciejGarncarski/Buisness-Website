@@ -21,6 +21,13 @@ const GlobalStyle = createGlobalStyle`
             scroll-padding: 5em;
         }
     }
+
+
+    ::selection{
+        background-color: ${({ theme }) => theme.blue};
+        color: ${({ theme }) => theme.green};
+    }
+
     body{
         background-color: ${({ theme }) => theme.yellow};
         min-height: 100vh;
