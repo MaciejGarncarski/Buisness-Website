@@ -2,6 +2,7 @@
   "name": "vite-ts",
   "version": "0.2.0",
   "license": "MIT",
+  "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -11,7 +11,15 @@ const Gallery = ({ id }: Anchor) => {
     <Container id={id} variants={variants} initial="hidden" whileInView="visible">
       <SectionTitle labelText="Gallery" />
       {data.map(({ src, id, alt }) => (
-        <ImgFill variants={item} src={src} key={id} alt={alt} className={`img--${id}`} />
+        <ImgFill
+          variants={item}
+          width="100%"
+          height="100%"
+          src={src}
+          key={id}
+          alt={alt}
+          className={`img--${id}`}
+        />
       ))}
     </Container>
   );
