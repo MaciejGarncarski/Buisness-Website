@@ -15,6 +15,7 @@ const HeaderContainer = styled.header`
     justify-content: center;
     padding-bottom: 5em;
     row-gap: 8em;
+    font-size: 1em;
   }
 `;
 
