@@ -1,41 +1,41 @@
 import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from '../StyledComponents/GlobalStyle';
-import { Theme } from '../StyledComponents/Theme';
-import { CursorProvider } from '../contexts/CursorContext';
+import { GlobalStyle } from './StyledComponents/GlobalStyle';
+import { Theme } from './StyledComponents/Theme';
+import { CursorProvider } from './contexts/CursorContext';
 import { isMobile } from 'react-device-detect';
 import { useReducedMotion } from 'framer-motion';
-import { useScrollPosition } from '../hooks/useScrollPosition';
+import { useScrollPosition } from './hooks/useScrollPosition';
 import loadable from '@loadable/component';
-import { Contact } from './Contact/Contact';
-import { About } from './About/About';
+import { Contact } from './components/Contact/Contact';
+import { About } from './components/About/About';
 
 const Cursor = loadable(async () => {
-  const { Cursor } = await import('./Cursor/Cursor');
+  const { Cursor } = await import('./components/Cursor/Cursor');
   return Cursor;
 });
 
 const Header = loadable(async () => {
-  const { Header } = await import('./Header/Header');
+  const { Header } = await import('./components/Header/Header');
   return Header;
 });
 
 const Nav = loadable(async () => {
-  const { Nav } = await import('./Nav/Nav');
+  const { Nav } = await import('./components/Nav/Nav');
   return Nav;
 });
 
 const Separator = loadable(async () => {
-  const { Separator } = await import('./Separator/Separator');
+  const { Separator } = await import('./components/Separator/Separator');
   return Separator;
 });
 
 const Gallery = loadable(async () => {
-  const { Gallery } = await import('./Gallery/Gallery');
+  const { Gallery } = await import('./components/Gallery/Gallery');
   return Gallery;
 });
 
 const Footer = loadable(async () => {
-  const { Footer } = await import('./Footer/Footer');
+  const { Footer } = await import('./components/Footer/Footer');
   return Footer;
 });
 
