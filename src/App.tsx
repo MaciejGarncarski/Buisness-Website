@@ -2,12 +2,15 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './StyledComponents/GlobalStyle';
 import { Theme } from './StyledComponents/Theme';
 import { CursorProvider } from './contexts/CursorContext';
-import { isMobile } from 'react-device-detect';
+import { useMobileContext } from './contexts/MobileContext';
 import { useReducedMotion } from 'framer-motion';
 import { useScrollPosition } from './hooks/useScrollPosition';
 import loadable from '@loadable/component';
 import { Contact } from './components/Contact/Contact';
 import { About } from './components/About/About';
+import { isMobile as isMobileDevice } from 'react-device-detect';
+import { useEffect } from 'react';
+import debounce from 'lodash.debounce';
 
 const Cursor = loadable(async () => {
   const { Cursor } = await import('./components/Cursor/Cursor');
@@ -51,11 +54,18 @@ const Container = styled.div`
 const anchor = ['', 'about', 'gallery', 'contact'];
 
 const App = function () {
+  const { isMobile, setIsMobile } = useMobileContext();
+
+  useEffect(() => {
+    setIsMobile(isMobileDevice);
+    return () => setIsMobile(false);
+  }, [setIsMobile]);
+
   const offsetY = useScrollPosition();
   const usesReducedMotion = useReducedMotion();
   return (
-    <CursorProvider>
-      <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={Theme}>
+      <CursorProvider>
         <GlobalStyle />
         {!isMobile && !usesReducedMotion && <Cursor />}
         <Container>
@@ -68,8 +78,8 @@ const App = function () {
           <Contact id={anchor[3]} />
           <Footer />
         </Container>
-      </ThemeProvider>
-    </CursorProvider>
+      </CursorProvider>
+    </ThemeProvider>
   );
 };
 

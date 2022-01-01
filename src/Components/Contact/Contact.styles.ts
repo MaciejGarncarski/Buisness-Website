@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const Container = styled.section`
-  height: 55em;
+  height: 80em;
   width: 100%;
   display: flex;
   padding: 0 2em;
-  padding-bottom: 6em;
-  padding-top: 2em;
+  padding-bottom: 12em;
+  padding-top: 12em;
   justify-content: center;
   align-items: center;
   flex-direction: column;

@@ -1,4 +1,4 @@
-import { isMobile } from 'react-device-detect';
+import { useMobileContext } from '../../contexts/MobileContext';
 import { HeaderContainer, H1, Description } from './Header.styles';
 import { Triangle, Rectangle, Circle } from './Shapes/Shapes';
 import { useReducedMotion } from 'framer-motion';
@@ -9,6 +9,7 @@ type Header = Offset & Anchor;
 
 const Header = ({ id, offsetY }: Header) => {
   const usesReducedMotion = useReducedMotion();
+  const { isMobile } = useMobileContext();
 
   let multiply = 0;
   if (usesReducedMotion) {

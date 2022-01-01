@@ -26,9 +26,11 @@ const Cursor = function () {
       position.mouseX = clientX - secondaryCursor.current.clientWidth / 2;
       position.mouseY = clientY - secondaryCursor.current.clientHeight / 2;
 
-      primaryCursor.current.style.transform = `translate3d(${
-        clientX - primaryCursor.current.clientWidth / 2
-      }px, ${clientY - primaryCursor.current.clientHeight / 2}px, 0)`;
+      // primaryCursor.current.style.transform = `translate3d(${
+      //   clientX - primaryCursor.current.clientWidth / 2
+      // }px, ${clientY - primaryCursor.current.clientHeight / 2}px, 0)`;
+      primaryCursor.current.style.left = `${clientX - primaryCursor.current.clientWidth}px`;
+      primaryCursor.current.style.top = `${clientY - primaryCursor.current.clientHeight}px`;
     }
   }, [position, clientX, clientY]);
 
@@ -53,7 +55,8 @@ const Cursor = function () {
       }
 
       if (secondaryCursor.current) {
-        secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+        secondaryCursor.current.style.top = `${destinationY}px`;
+        secondaryCursor.current.style.left = `${destinationX}px`;
       }
     };
     followMouse();

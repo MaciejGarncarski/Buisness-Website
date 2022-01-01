@@ -6,7 +6,7 @@ const HeaderContainer = styled.header`
   position: relative;
   overflow-y: hidden;
   display: flex;
-  row-gap: 5em;
+  row-gap: 9em;
   font-size: 1rem;
   flex-direction: column;
   padding: 0 1em 2em 1em;

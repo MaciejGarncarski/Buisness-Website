@@ -9,7 +9,7 @@ const Link = styled.a`
   border: 4px solid transparent;
   padding: 0.7em 0;
   font-weight: 700;
-  font-size: 1.75em;
+  font-size: 1.7em;
   text-decoration: none;
   transition: all ease-in-out 300ms;
   transition-property: transform;
@@ -17,10 +17,12 @@ const Link = styled.a`
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     gap: 0.3em;
     width: 75%;
+    font-size: 1.5em;
   }
   &:hover,
   &:focus {
-    transform: scale(1.12);
+    transform: scale(1.05);
+    outline: 2px solid ${({ theme }) => theme.black};
   }
   & > svg {
     font-size: 2em;

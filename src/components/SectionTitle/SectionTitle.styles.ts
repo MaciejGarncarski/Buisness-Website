@@ -4,13 +4,12 @@ import { motion } from 'framer-motion';
 const Heading = styled(motion.h2)`
   position: absolute;
   top: 2em;
-  left: 3em;
+  left: 2em;
   font-size: 2.5rem;
   font-weight: 700;
   padding: 0 0.2em;
   color: ${({ theme }) => theme.black};
   text-transform: capitalize;
-  display: none;
   &::before {
     content: '';
     width: 120%;
@@ -23,6 +22,7 @@ const Heading = styled(motion.h2)`
   }
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     display: block;
+    left: 3.5em;
   }
 `;
 

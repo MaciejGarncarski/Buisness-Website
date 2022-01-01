@@ -6,9 +6,11 @@ const Container = styled(motion.section)`
   display: flex;
   justify-content: center;
   align-content: center;
+  padding: 10em 0;
   position: relative;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     height: 100vh;
+    padding: 0;
   }
 `;
 
