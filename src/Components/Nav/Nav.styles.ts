@@ -26,7 +26,7 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   @supports (gap: 10px) {
-    gap: calc(1em + 2vw);
+    gap: calc(2em + 4vw);
     @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
       gap: calc(2em + 2vw);
     }

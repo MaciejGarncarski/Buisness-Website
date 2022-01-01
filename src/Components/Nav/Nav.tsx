@@ -12,14 +12,16 @@ const Nav = ({ ids, offsetY }: NavTypes) => {
   useEffect(() => {
     const setDefaultPos = () => {
       if (navRef.current) {
-        setNavPosition(navRef.current.offsetTop);
+        setNavPosition(window.innerHeight);
       }
     };
     setDefaultPos();
+    window.addEventListener('resize', setDefaultPos);
+    return () => window.removeEventListener('resize', setDefaultPos);
   }, []);
 
   useEffect(() => {
-    offsetY >= navPosition - 10 ? setIsSticked(true) : setIsSticked(false);
+    offsetY >= navPosition - 100 ? setIsSticked(true) : setIsSticked(false);
   }, [navPosition, offsetY]);
 
   return (
