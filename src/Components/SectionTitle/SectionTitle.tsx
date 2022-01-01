@@ -1,6 +1,7 @@
-import { Heading } from './SectionTitle.styles';
-import { Label } from '../../types/types';
 import { variant } from '../../assets/animations/sectiontitle';
+import { Label } from '../../types/types';
+
+import { Heading } from './SectionTitle.styles';
 
 const SectionTitle = ({ labelText }: Label) => {
   return (

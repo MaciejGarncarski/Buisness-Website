@@ -1,3 +1,5 @@
+import { CardContainer as CardContainerProps } from '../../../types/types';
+
 import {
   TiltContainer,
   CardContainer,
@@ -6,7 +8,6 @@ import {
   IconContainer,
   CardDescription,
 } from './Card.styles';
-import { CardContainer as CardContainerProps } from '../../Types/types';
 
 const Card = ({ bg, border, label, heading, Icon, description }: CardContainerProps) => {
   return (

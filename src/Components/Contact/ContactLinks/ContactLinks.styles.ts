@@ -1,7 +1,8 @@
-import styled, { css } from 'styled-components';
-import triangle from '../../../assets/images/header/triangle.svg';
-import square from '../../../assets/images/header/rectangle.svg';
 import { motion } from 'framer-motion';
+import styled, { css } from 'styled-components';
+
+import square from '../../../assets/images/header/rectangle.svg';
+import triangle from '../../../assets/images/header/triangle.svg';
 const pseudoElement = css`
   content: '';
   position: absolute;

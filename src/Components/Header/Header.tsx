@@ -1,9 +1,11 @@
+import { useReducedMotion } from 'framer-motion';
+
 import { useMobileContext } from '../../contexts/MobileContext';
+import { Offset, Anchor } from '../../types/types';
+
+import { heading, description } from './Header.data';
 import { HeaderContainer, H1, Description } from './Header.styles';
 import { Triangle, Rectangle, Circle } from './Shapes/Shapes';
-import { useReducedMotion } from 'framer-motion';
-import { heading, description } from './Header.data';
-import { Offset, Anchor } from '../../types/types';
 
 type Header = Offset & Anchor;
 

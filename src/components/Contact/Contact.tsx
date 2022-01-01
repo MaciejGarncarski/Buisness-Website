@@ -1,8 +1,10 @@
+import loadable from '@loadable/component';
+
+import { Anchor } from '../../types/types';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
+
 import { Container } from './Contact.styles';
 import { Map } from './Map/Map';
-import { SectionTitle } from '../SectionTitle/SectionTitle';
-import { Anchor } from '../../types/types';
-import loadable from '@loadable/component';
 
 const ContactLinks = loadable(async () => {
   const { ContactLinks } = await import('./ContactLinks/ContactLinks');

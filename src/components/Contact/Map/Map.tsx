@@ -1,14 +1,9 @@
-import { MapContainer, TileLayer } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-
+import { Container, Frame } from './Map.styles';
 const Map = () => {
   return (
-    <MapContainer center={[50.05083, 21.40989]} zoom={14} scrollWheelZoom={true}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-    </MapContainer>
+    <Container>
+      <Frame src="https://www.openstreetmap.org/export/embed.html?bbox=21.404639482498172%2C50.04930973983964%2C21.413598060607914%2C50.05245804078455&zoom=12&amp;layer=mapnik" />
+    </Container>
   );
 };
 

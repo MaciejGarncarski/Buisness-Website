@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { FooterContainer, Author } from './Footer.styles';
+
 import { Link } from '../Link/Link';
+
+import { FooterContainer, Author } from './Footer.styles';
 
 const Footer = function () {
   const [year, setYear] = useState(2021);

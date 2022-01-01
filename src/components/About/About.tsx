@@ -1,15 +1,19 @@
+import { useReducedMotion } from 'framer-motion';
 import { AiOutlineBarChart, AiOutlineExperiment, AiOutlineCalendar } from 'react-icons/ai';
-import { Container } from './About.styles';
-import { SectionTitle } from '../SectionTitle/SectionTitle';
-import { Card } from './Card/Card';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { variants } from '../../assets/animations/about';
+import { data } from '../../data/cards';
+import { Anchor } from '../../types/types';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
+
+import { Container } from './About.styles';
+import { Card } from './Card/Card';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useReducedMotion } from 'framer-motion';
-import { Anchor } from '../../types/types';
-import { data } from '../../data/cards';
-import { variants } from '../../assets/animations/about';
+
 const About = function ({ id }: Anchor) {
   const usesReducedMotion = useReducedMotion();
   let sliderSpeed = 0;

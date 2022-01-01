@@ -1,9 +1,11 @@
-import { List } from './ContactLinks.styles';
 import { motion } from 'framer-motion';
-import { ListItem as ListItemTypes } from '../../../types/types';
-import { data } from '../../../data/contactlinks';
+
 import { variants, item } from '../../../assets/animations/contactlinks';
+import { data } from '../../../data/contactlinks';
+import { ListItem as ListItemTypes } from '../../../types/types';
+
 import { ContactLink } from './ContactLink/ContactLink';
+import { List } from './ContactLinks.styles';
 
 const ListItem = ({ children }: ListItemTypes) => {
   return <motion.li variants={item}>{children}</motion.li>;

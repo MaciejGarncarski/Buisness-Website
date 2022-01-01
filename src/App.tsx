@@ -1,16 +1,16 @@
+import loadable from '@loadable/component';
+import { useReducedMotion } from 'framer-motion';
+import { useEffect } from 'react';
+import { isMobile as isMobileDevice } from 'react-device-detect';
 import styled, { ThemeProvider } from 'styled-components';
+
 import { GlobalStyle } from './StyledComponents/GlobalStyle';
 import { Theme } from './StyledComponents/Theme';
+import { About } from './components/About/About';
+import { Contact } from './components/Contact/Contact';
 import { CursorProvider } from './contexts/CursorContext';
 import { useMobileContext } from './contexts/MobileContext';
-import { useReducedMotion } from 'framer-motion';
 import { useScrollPosition } from './hooks/useScrollPosition';
-import loadable from '@loadable/component';
-import { Contact } from './components/Contact/Contact';
-import { About } from './components/About/About';
-import { isMobile as isMobileDevice } from 'react-device-detect';
-import { useEffect } from 'react';
-import debounce from 'lodash.debounce';
 
 const Cursor = loadable(async () => {
   const { Cursor } = await import('./components/Cursor/Cursor');
@@ -84,4 +84,4 @@ const App = function () {
 };
 
 export type ThemeType = typeof Theme;
-export default App;
+export { App };

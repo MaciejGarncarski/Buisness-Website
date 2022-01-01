@@ -1,9 +1,10 @@
-import { Container } from './Gallery.styles';
+import { variants, item } from '../../assets/animations/gallery';
+import { data } from '../../data/gallery';
 import { Anchor } from '../../types/types';
 import { ImgFill } from '../ImgFill/ImgFill.styles';
 import { SectionTitle } from '../SectionTitle/SectionTitle';
-import { data } from '../../data/gallery';
-import { variants, item } from '../../assets/animations/gallery';
+
+import { Container } from './Gallery.styles';
 
 const Gallery = ({ id }: Anchor) => {
   return (

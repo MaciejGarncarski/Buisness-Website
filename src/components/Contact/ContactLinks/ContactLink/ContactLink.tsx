@@ -1,5 +1,6 @@
 import { useCursorContext } from '../../../../contexts/CursorContext';
 import { ContactLink as ContactLinkTypes } from '../../../../types/types';
+
 import { Link } from './ContactLink.styles';
 
 const ContactLink = ({ href, title, label, icon }: ContactLinkTypes) => {

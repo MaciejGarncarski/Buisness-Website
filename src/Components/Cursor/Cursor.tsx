@@ -1,7 +1,9 @@
 import { useRef, useEffect } from 'react';
-import { useMousePosition } from '../../hooks/useMousePosition';
-import { PrimaryCursor, SecondaryCursor } from './Cursor.styles';
+
 import { useCursorContext } from '../../contexts/CursorContext';
+import { useMousePosition } from '../../hooks/useMousePosition';
+
+import { PrimaryCursor, SecondaryCursor } from './Cursor.styles';
 
 const Cursor = function () {
   const { isActive } = useCursorContext();
@@ -26,9 +28,6 @@ const Cursor = function () {
       position.mouseX = clientX - secondaryCursor.current.clientWidth / 2;
       position.mouseY = clientY - secondaryCursor.current.clientHeight / 2;
 
-      // primaryCursor.current.style.transform = `translate3d(${
-      //   clientX - primaryCursor.current.clientWidth / 2
-      // }px, ${clientY - primaryCursor.current.clientHeight / 2}px, 0)`;
       primaryCursor.current.style.left = `${clientX - primaryCursor.current.clientWidth}px`;
       primaryCursor.current.style.top = `${clientY - primaryCursor.current.clientHeight}px`;
     }

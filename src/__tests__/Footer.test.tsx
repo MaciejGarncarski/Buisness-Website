@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { CursorProvider } from '../contexts/CursorContext';
+
 import { Footer } from '../components/Footer/Footer';
+import { CursorProvider } from '../contexts/CursorContext';
 import '@testing-library/jest-dom';
 
 test('Should render Footer & text should be correct', async () => {
