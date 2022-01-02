@@ -1,4 +1,3 @@
-import loadable from '@loadable/component';
 import { useReducedMotion } from 'framer-motion';
 import { useEffect } from 'react';
 import { isMobile as isMobileDevice } from 'react-device-detect';
@@ -8,39 +7,15 @@ import { GlobalStyle } from './StyledComponents/GlobalStyle';
 import { Theme } from './StyledComponents/Theme';
 import { About } from './components/About/About';
 import { Contact } from './components/Contact/Contact';
+import { Cursor } from './components/Cursor/Cursor';
+import { Footer } from './components/Footer/Footer';
+import { Gallery } from './components/Gallery/Gallery';
+import { Header } from './components/Header/Header';
+import { Nav } from './components/Nav/Nav';
+import { Separator } from './components/Separator/Separator';
 import { CursorProvider } from './contexts/CursorContext';
 import { useMobileContext } from './contexts/MobileContext';
 import { useScrollPosition } from './hooks/useScrollPosition';
-
-const Cursor = loadable(async () => {
-  const { Cursor } = await import('./components/Cursor/Cursor');
-  return Cursor;
-});
-
-const Header = loadable(async () => {
-  const { Header } = await import('./components/Header/Header');
-  return Header;
-});
-
-const Nav = loadable(async () => {
-  const { Nav } = await import('./components/Nav/Nav');
-  return Nav;
-});
-
-const Separator = loadable(async () => {
-  const { Separator } = await import('./components/Separator/Separator');
-  return Separator;
-});
-
-const Gallery = loadable(async () => {
-  const { Gallery } = await import('./components/Gallery/Gallery');
-  return Gallery;
-});
-
-const Footer = loadable(async () => {
-  const { Footer } = await import('./components/Footer/Footer');
-  return Footer;
-});
 
 const Container = styled.div`
   display: flex;

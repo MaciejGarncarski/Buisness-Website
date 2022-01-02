@@ -54,9 +54,9 @@ const Description = styled.p`
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
-  text-align: center;
   font-size: 2em;
   padding: 0 1em;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {

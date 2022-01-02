@@ -53,6 +53,9 @@ const CardDescription = styled.p`
   color: ${({ theme }) => theme.black};
   font-size: 2em;
   text-align: center;
+  @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
+    text-align: left;
+  }
 `;
 
 const H3 = css`

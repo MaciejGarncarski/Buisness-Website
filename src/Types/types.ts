@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, RefObject } from 'react';
 
 export type Anchor = {
   id?: string;
@@ -29,6 +29,10 @@ export type Link = {
 
 export type Multiply = {
   multiply: number;
+};
+
+export type Shape = Multiply & {
+  ref: RefObject<HTMLElement>;
 };
 
 export type Offset = {

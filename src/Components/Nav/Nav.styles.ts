@@ -7,8 +7,7 @@ const NavContainer = styled.nav<{ isSticked: boolean }>`
   flex-direction: column;
   align-items: center;
   background: ${({ theme }) => theme.darkYellow};
-  border-top: 1px solid ${({ theme }) => theme.green};
-  border-bottom: 1px solid ${({ theme }) => theme.green};
+  box-shadow: 0px 0px 10px ${({ theme }) => theme.green};
   position: ${({ isSticked }) => (isSticked ? 'fixed' : 'absolute')};
   left: 0;
   z-index: 1001;

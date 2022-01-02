@@ -5,7 +5,7 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const Frame = styled.iframe`
+const Frame = styled.object`
   width: 100%;
   height: 100%;
 `;

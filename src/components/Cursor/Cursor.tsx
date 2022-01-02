@@ -62,13 +62,14 @@ const Cursor = function () {
   }, [position]);
 
   useEffect(() => {
-    const handleClick = async () => {
+    const handleClick = () => {
       primaryCursor.current?.classList.add('clicked');
       secondaryCursor.current?.classList.add('clicked');
+
       setTimeout(() => {
         primaryCursor.current?.classList.remove('clicked');
         secondaryCursor.current?.classList.remove('clicked');
-      }, 500);
+      }, 750);
     };
 
     window.addEventListener('click', handleClick);

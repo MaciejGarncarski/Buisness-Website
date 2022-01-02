@@ -13,12 +13,13 @@ const Gallery = ({ id }: Anchor) => {
       {data.map(({ src, id, alt }) => (
         <ImgFill
           variants={item}
-          width="100%"
-          height="100%"
+          width="300px"
+          height="160px"
           src={src}
           key={id}
           alt={alt}
           className={`img--${id}`}
+          loading="lazy"
         />
       ))}
     </Container>
