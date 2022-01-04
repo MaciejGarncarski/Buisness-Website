@@ -1,6 +1,23 @@
 import styled from 'styled-components';
 
-const NavContainer = styled.nav<{ isSticked: boolean }>`
+const NavContainer = styled.nav`
+  @keyframes stick {
+    from {
+      transform: translateY(-1.3em);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes static {
+    from {
+      transform: translateY(5em);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
   width: 100%;
   padding: 1.5em;
   display: flex;
@@ -8,17 +25,19 @@ const NavContainer = styled.nav<{ isSticked: boolean }>`
   align-items: center;
   background: ${({ theme }) => theme.darkYellow};
   box-shadow: 0px 0px 10px ${({ theme }) => theme.green};
-  position: ${({ isSticked }) => (isSticked ? 'fixed' : 'absolute')};
-  left: 0;
   z-index: 1001;
-  ${({ isSticked }) =>
-    isSticked
-      ? `
+  position: absolute;
+  left: 0;
+  &.sticked {
+    position: fixed;
     top: 0;
-  `
-      : `
+    animation: stick 300ms ease;
+  }
+  &.static {
+    position: absolute;
     bottom: 0;
-  `}
+    animation: static 300ms ease;
+  }
 `;
 
 const List = styled.ul`

@@ -1,4 +1,3 @@
-import debounce from 'lodash.debounce';
 import { useEffect, useState, useRef } from 'react';
 
 import { data } from '../../data/nav';
@@ -15,27 +14,24 @@ const Nav = ({ ids, offsetY }: NavTypes) => {
   useEffect(() => {
     const setDefaultPos = () => {
       if (navRef.current) {
-        setNavPosition(window.innerHeight);
+        setNavPosition(window.innerHeight - navRef.current.offsetHeight);
       }
     };
     setDefaultPos();
-    window.addEventListener(
-      'resize',
-      debounce(() => setDefaultPos, 500),
-    );
+    window.addEventListener('resize', setDefaultPos);
     return () => window.removeEventListener('resize', setDefaultPos);
-  }, []);
+  }, [navPosition]);
 
   useEffect(() => {
-    offsetY >= navPosition - 50 ? setIsSticked(true) : setIsSticked(false);
+    offsetY >= navPosition ? setIsSticked(true) : setIsSticked(false);
   }, [navPosition, offsetY]);
 
   return (
-    <NavContainer ref={navRef} isSticked={isSticked}>
+    <NavContainer ref={navRef} className={isSticked ? 'sticked' : 'static'}>
       <List>
-        {data.map(({ title, Icon }, idx) => {
+        {data.map(({ title, Icon }, i) => {
           return (
-            <NavLink key={idx} href={`#${ids[idx]}`} title={title}>
+            <NavLink key={i} href={`#${ids[i]}`} title={title}>
               <Icon />
             </NavLink>
           );

@@ -36,6 +36,23 @@ const SecondaryCursor = styled.div`
     opacity: 0;
     background-color: ${({ theme }) => theme.green};
   }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: ${({ theme }) => theme.blue};
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: -15%;
+  }
 `;
 
 export { PrimaryCursor, SecondaryCursor };

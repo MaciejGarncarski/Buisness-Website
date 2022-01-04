@@ -11,6 +11,7 @@ const Container = styled(motion.section)`
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     height: 100vh;
     padding: 0;
+    padding-top: 3em;
   }
 `;
 
