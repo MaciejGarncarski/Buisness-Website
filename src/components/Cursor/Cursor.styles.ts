@@ -43,15 +43,15 @@ const SecondaryCursor = styled.div`
     top: 50%;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background-color: ${({ theme }) => theme.blue};
   }
   &::before {
     left: 0;
   }
   &::after {
-    right: -15%;
+    left: 100%;
   }
 `;
 

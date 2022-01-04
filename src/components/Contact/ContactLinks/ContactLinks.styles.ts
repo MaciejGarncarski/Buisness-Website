@@ -46,7 +46,7 @@ const List = styled(motion.ul)`
     gap: 1em;
 
     &::before {
-      left: 5vw;
+      left: 1vw;
       top: 0;
       width: 17vw;
       height: 18.5vw;

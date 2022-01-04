@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { LeafletStyles } from './Leaflet';
 import { ScrollBar } from './Scrollbar';
 import { SwiperStyles } from './Swpier';
 
@@ -37,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
     }
     ${SwiperStyles};
     ${ScrollBar}
-    ${LeafletStyles};
 `;
 
 export { GlobalStyle };
