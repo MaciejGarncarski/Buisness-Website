@@ -1,11 +1,26 @@
+import loadable from '@loadable/component';
 import { useReducedMotion } from 'framer-motion';
 
 import { useMobileContext } from '../../contexts/MobileContext';
+import { heading, description } from '../../data/header';
 import { Offset, Anchor } from '../../types/types';
 
-import { heading, description } from './Header.data';
 import { HeaderContainer, H1, Description } from './Header.styles';
-import { Triangle, Rectangle, Circle } from './Shapes/Shapes';
+
+const Triangle = loadable(async () => {
+  const { Triangle } = await import('./Shapes/Shapes');
+  return Triangle;
+});
+
+const Rectangle = loadable(async () => {
+  const { Rectangle } = await import('./Shapes/Shapes');
+  return Rectangle;
+});
+
+const Circle = loadable(async () => {
+  const { Circle } = await import('./Shapes/Shapes');
+  return Circle;
+});
 
 type Header = Offset & Anchor;
 

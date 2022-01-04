@@ -14,10 +14,10 @@ const ListItem = ({ children }: ListItemTypes) => {
 const ContactLinks = () => {
   return (
     <List variants={variants} initial="hidden" whileInView="visible">
-      {data.map(({ href, title, label, Icon }) => {
+      {data.map(({ href, title, label, Icon, isLink }) => {
         return (
           <ListItem key={title}>
-            <ContactLink href={href} title={title} label={label} icon={<Icon />} />
+            <ContactLink href={href} title={title} label={label} icon={<Icon />} isLink={isLink} />
           </ListItem>
         );
       })}

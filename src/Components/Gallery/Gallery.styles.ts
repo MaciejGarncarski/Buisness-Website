@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-const Container = styled(motion.article)`
+const Container = styled(motion.section)`
   position: relative;
   column-count: 3;
   padding: 15em 2em;

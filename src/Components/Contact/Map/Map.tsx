@@ -2,7 +2,10 @@ import { Container, Frame } from './Map.styles';
 const Map = () => {
   return (
     <Container>
-      <Frame data="https://www.openstreetmap.org/export/embed.html?bbox=21.400605440139774%2C50.04776306995946%2C21.418522596359253%2C50.0540596682347&amp;layer=mapnik&amp;marker=50.05091147236601%2C21.40956401824951" />
+      <Frame
+        title="company location"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2561.885245148878!2d21.409462133326258!3d50.05098095833682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spl!4v1641290095615!5m2!1sen!2spl"
+      />
     </Container>
   );
 };

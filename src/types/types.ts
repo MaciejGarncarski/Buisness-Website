@@ -53,12 +53,13 @@ export type ListItem = {
   children: ReactNode;
 };
 
-export type NavLink = {
+export interface NavLink {
   href: string;
   title: string;
-};
+}
 
-export type ContactLink = NavLink & {
+export interface ContactLink extends NavLink {
   label: string;
   icon: ReactNode;
-};
+  isLink: boolean;
+}

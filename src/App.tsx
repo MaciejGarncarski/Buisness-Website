@@ -1,3 +1,4 @@
+import loadable from '@loadable/component';
 import { useReducedMotion } from 'framer-motion';
 import { useEffect } from 'react';
 import { isMobile as isMobileDevice } from 'react-device-detect';
@@ -6,16 +7,28 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './StyledComponents/GlobalStyle';
 import { Theme } from './StyledComponents/Theme';
 import { About } from './components/About/About';
-import { Contact } from './components/Contact/Contact';
 import { Cursor } from './components/Cursor/Cursor';
-import { Footer } from './components/Footer/Footer';
-import { Gallery } from './components/Gallery/Gallery';
 import { Header } from './components/Header/Header';
 import { Nav } from './components/Nav/Nav';
 import { Separator } from './components/Separator/Separator';
 import { CursorProvider } from './contexts/CursorContext';
 import { useMobileContext } from './contexts/MobileContext';
 import { useScrollPosition } from './hooks/useScrollPosition';
+
+const Footer = loadable(async () => {
+  const { Footer } = await import('./components/Footer/Footer');
+  return Footer;
+});
+
+const Contact = loadable(async () => {
+  const { Contact } = await import('./components/Contact/Contact');
+  return Contact;
+});
+
+const Gallery = loadable(async () => {
+  const { Gallery } = await import('./components/Gallery/Gallery');
+  return Gallery;
+});
 
 const Container = styled.div`
   display: flex;
