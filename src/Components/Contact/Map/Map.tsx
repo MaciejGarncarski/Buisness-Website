@@ -1,4 +1,5 @@
 import { Container, Frame } from './Map.styles';
+
 const Map = () => {
   return (
     <Container>
