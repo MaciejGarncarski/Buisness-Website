@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Heading = styled(motion.h2)`
   position: absolute;
-  top: 2em;
+  top: 1.25em;
   left: 0.5em;
   font-size: 2.5rem;
   font-weight: 700;
@@ -15,6 +15,7 @@ const Heading = styled(motion.h2)`
   border: 2px solid ${({ theme }) => theme.black};
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     display: block;
+    top: 2em;
     left: 3.5em;
   }
 `;

@@ -8,7 +8,7 @@ interface Props {
 
 const TiltContainer = styled(Tilt)<Props>`
   width: max(60vw, 18em);
-  height: 35em;
+  height: 32em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@ const CardContainer = styled.article`
   align-items: center;
   flex-direction: column;
   transform: translateZ(130px) scale(0.73);
-  gap: 1em;
+  gap: 0.5em;
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
     display: grid;
     place-items: center;

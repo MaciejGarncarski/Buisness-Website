@@ -4,13 +4,11 @@ const Container = styled.section`
   height: 80em;
   width: 100%;
   display: flex;
-  padding: 0 2em;
-  padding-bottom: 12em;
-  padding-top: 12em;
+  padding: 12em 2em;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2em;
+  gap: 4em;
   position: relative;
 
   @media screen and (min-width: ${({ theme }) => theme.bigScreen}) {
