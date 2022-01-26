@@ -26,7 +26,7 @@ const ContactLink = ({ href, title, label, icon, isLink }: ContactLinkTypes) => 
       onMouseLeave={() => setIsActive(false)}
     >
       {icon}
-      <p>{label}</p>
+      {label}
     </Link>
   );
 };
