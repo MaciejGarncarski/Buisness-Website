@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
 import { App } from './App';
-import { MobileContextProvider } from './contexts/MobileContext';
+import { MobileContextProvider } from './Contexts/MobileContext';
 
 ReactDOM.render(
   <StrictMode>
