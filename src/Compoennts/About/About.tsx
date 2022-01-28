@@ -13,7 +13,7 @@ import { Container } from './About.styles';
 import { Card } from './Card/Card';
 
 import 'swiper/css';
-import 'swiper/modules/navigation/pagination.min.css';
+import 'swiper/css/navigation';
 
 type Anchor = {
   id?: string;
